@@ -31,40 +31,18 @@
 </head>
 
 <body>
-  <img src="https://i1.sndcdn.com/avatars-000180833065-1d8m0g-t500x500.jpg" height="500px" width="500px">
-  <div id="dynamicContent">wake up</div>
-  <p>
-  </p>
-  <input type="button" onClick=fontChanger() value="SUBMIT">
   <script>
-    var counter = 0;
-
-    function fontChanger() {
+  var counter = 0;
+    function changeImage() {
+      var img = document.getElementById("image");
       counter++;
-      if (counter % 10 == 1) {
-        document.getElementById('dynamicContent').style.fontFamily = 'courier';
-      } else if (counter % 10 == 2) {
-        document.getElementById('dynamicContent').style.fontFamily = 'roman';
-      } else if (counter % 10 == 3) {
-        document.getElementById('dynamicContent').style.fontFamily = 'georgia';
-      } else if (counter % 10 == 4) {
-        document.getElementById('dynamicContent').style.fontFamily = 'verdana';
-      } else if (counter % 10 == 5) {
-        document.getElementById('dynamicContent').style.fontFamily = 'symbol';
-      } else if (counter % 10 == 6) {
-        document.getElementById('dynamicContent').style.fontFamily = 'arial';
-      } else if (counter % 10 == 7) {
-        document.getElementById('dynamicContent').style.fontFamily = 'lucida';
-      } else if (counter % 10 == 8) {
-        document.getElementById('dynamicContent').style.fontFamily = 'tahoma';
-      } else if (counter % 10 == 9) {
-        document.getElementById('dynamicContent').style.fontFamily = 'roman';
-      } else if (counter % 10 == 0) {
-        document.getElementById('dynamicContent').style.fontFamily = 'roman';
+      if (counter % 2 == 0) {
+        img.src = "https://i1.sndcdn.com/avatars-000180833065-1d8m0g-t500x500.jpg";
+      } else {
+        img.src = "https://i1.sndcdn.com/artworks-000131564119-y8a1uv-t500x500.jpg"
       }
     }
-
   </script>
-  <p>
-  </p>
+  <img id="image" src="https://i1.sndcdn.com/avatars-000180833065-1d8m0g-t500x500.jpg" onclick="changeImage()"/>
+  <br>
   <iframe width="50%" height="20px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/226786494&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=false"></iframe>
