@@ -27,19 +27,21 @@ input[type="submit"] {
 </head>
 <body>
 <img src="https://i1.sndcdn.com/avatars-000180833065-1d8m0g-t500x500.jpg" height="500" width="500">
-<p>
-</p>
+<script>
+var counter = 1;
+var output = "test";
+function myFunction() {
+    counter++;
+    document.getElementById("fooHolder").innerHTML = output;
+    if(counter > 5) {
+        output = "die";
+    }
+}
+</script>
+<p id="fooHolder"></p>
 <input type="button" onClick=myFunction() value="SUBMIT">
 <p>
 </p>
 <iframe width="50%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/226786494&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=false"></iframe>
 </body>
-<script>
-var counter = 1;
-function myFunction() {
-    counter++;
-    if(counter > 5) {
-        alert("WAKE UP");
-    }
-}
 </script>
