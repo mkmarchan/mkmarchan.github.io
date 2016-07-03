@@ -1,48 +1,59 @@
-<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body ng-app="myApp" ng-cloak>
+    <md-content id="window" layout="column">
+      <header flex="none"> Mick Marchan </header>
+      <div ng-cloak flex>
+        <md-content style="max-height:100%; overflow-y:hidden;">
+          <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Code">
+              <md-content class="md-padding tabScroll">
+                <h1 class="md-display-2">Code</h1>
+                <p>Hello, this page is currently under construction as I am stumbling my way through angularjs
+                  <br>
+                  Please standby
+                </p>
+              </md-content>
+            </md-tab>
+            <md-tab label="Music">
+              <md-content class="md-padding tabScroll">
+                <iframe width="100%" height="1000" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/6425962&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+              </md-content>
+            </md-tab>
+            <md-tab label="Social Media">
+              <md-content class="md-padding tabScroll">
+                <h1 class="md-display-2">Tab Three</h1>
+                <a class="twitter-timeline" href="https://twitter.com/0x39C">Tweets by 0x39C</a>
+              </md-content>
+            </md-tab>
+          </md-tabs>
+        </md-content>
+      </div>
+    </md-content>
 
-<head>
-  <style>
-    body {
-      text-align: Center;
-      background: black;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: white;
-      font-family: Helvetica;
-    }
-    
-    p {
-      font-size: 24px;
-    }
-    
-    input {
-      border: 0: padding: 12px;
-      font-size: 18px;
-    }
-    
-    input[type="submit"] {
-      background: limegreen;
-      color: black;
-    }
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
 
-  </style>
-</head>
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
 
-<body>
-  <script>
-  var counter = 0;
-    function changeImage() {
-      var img = document.getElementById("image");
-      counter++;
-      if (counter % 2 == 0) {
-        img.src = "https://i1.sndcdn.com/avatars-000180833065-1d8m0g-t500x500.jpg";
-      } else {
-        img.src = "https://i1.sndcdn.com/artworks-000131564119-y8a1uv-t500x500.jpg"
-      }
-    }
-  </script>
-  <img id="image" src="https://i1.sndcdn.com/avatars-000180833065-1d8m0g-t500x500.jpg" onclick="changeImage()"/>
-  <br>
-  <iframe width="50%" height="20px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/226786494&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=false"></iframe>
+    <!-- Your application bootstrap  -->
+    <script src="app.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  </body>
+</html>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+-->

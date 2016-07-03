@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,100&subset=latin,latin-ext);
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  font-weight: bold;
+  text-align: center;
+  font-size: 90px;
+}
+
+#window {
+  height: 100vh;
+}
+
+.tabScroll {
+  overflow-y: scroll;
+}
+
+#panel {
+  margin: 20px;
+  height: 90vh;
+  background-color: grey;
+}
