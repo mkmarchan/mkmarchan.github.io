@@ -24,6 +24,13 @@ SC.initialize({
   client_id: 'd9611ceddfd118f8d3c6890fa3b0a0f5'
 });
 
+function play(id) {
+  alert("im in");
+  SC.stream('/tracks/' + id, function(sound) {
+    sound.start();
+  });
+}
+
 /*
 SC.get('/users/6425962/tracks', function(track) {
   $('#Titles').html(track.title);

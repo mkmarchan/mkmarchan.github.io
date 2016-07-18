@@ -1,0 +1,18 @@
+#denial {
+  height:100%;
+  width:100%;
+  text-align: center;
+  background: black;
+}
+#userInput {
+  position: absolute;
+  z-index: 100;
+  opacity: 0;
+}
+
+#acceptance {
+  background: white;
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 2s;
+}
