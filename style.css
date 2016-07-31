@@ -23,3 +23,11 @@ header {
   height: 90vh;
   background-color: grey;
 }
+
+md-card-title-text {
+  padding-left: 20px;
+}
+
+#musicTab {
+  background-color: #FAFAFA;
+}

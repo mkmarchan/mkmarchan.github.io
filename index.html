@@ -24,18 +24,30 @@
               </md-content>
             </md-tab>
             <md-tab label="Music" flex layout="column">
-              <md-content class="md-padding" flex layout="column" ng-controller="MusicController as music">
-                <h1 style="text-align:center">{{music.oReq.trax[0].user.username}}</h1>
-                <p style="text-align:center">{{music.oReq.trax[0].user.followers_count}} followers</p>
-                <div ng-repeat="track in music.oReq.trax">
-                  <h2>{{track.title}}</h2>
-                  <div layout="row">
-                    <img ng-src="{{track.artwork_url}}"></img>
-                    <md-button id="play" class="md-raised md-primary" onclick="play(this.value)" value="{{track.id}}">Play</md-button>
-                    <md-button id="stop" class="md-raised md-primary" onclick="stop(this.value)" value="{{track.id}}">Stop</md-button>
-                    <img ng-src="{{track.waveform_url}}"></img>
+              <md-content id="musicTab" class="md-padding" flex layout="column" ng-controller="MusicController as music">
+                <div id="musicHeader" layout="column">
+                  <h1 style="text-align:center">{{me.username}}</h1>
+                  <h4 style="text-align:center">{{me.followers_count | number}} followers, {{playTotal | number}} plays</h4>
+                  <div layout="column" layout-align="center center">
+                    <img ng-src="{{getArtURL(me.avatar_url)}}" height="auto" width="auto">
                   </div>
-                  <p>{{track.description}}</p>
+                </div>
+                <div ng-repeat="track in myTracks">
+                  <md-card>
+                    <md-card-title>
+                      <md-card-title-media ng-hide="track.artwork_url == null">
+                        <div class="md-media-lg card-media"><img ng-src="{{getArtURL(track.artwork_url)}}"></img></div>
+                      </md-card-title-media>
+                      <md-card-title-text>
+                        <span class="md-headline">{{track.title}}</span>
+                        <p ng-bind-html="track.description | nl2br"></p>
+                      </md-card-title-text>
+                    </md-card-title>
+                    <md-card-actions layout="row" layout-align="start center">
+                      <md-button ng-click="play(track.id)">Play</md-button>
+                      <md-button ng-click="pause(track.id)">Stop</md-button>
+                    </md-card-actions>
+                  </md-card>
                 </div>
               </md-content>
             </md-tab>
