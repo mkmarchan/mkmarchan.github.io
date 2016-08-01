@@ -2,26 +2,27 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  overflow-y: scroll;
+  background-color: #FAFAFA;
+}
+
+#contentBody {
+  border-left: 1px solid #bdc3c7;
+  border-right: 1px solid #bdc3c7;
+  border-bottom: 1px solid #bdc3c7;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.fix-to-top {
+  position: fixed;
+  top: 0;
 }
 
 header {
   font-weight: bold;
   text-align: center;
-  font-size: 90px;
-}
-
-#window {
-  max-height: 100%;
-}
-
-.tabScroll {
-  background-color:red;
-}
-
-#panel {
-  margin: 20px;
-  height: 90vh;
-  background-color: grey;
+  font-size: 64px;
 }
 
 md-card-title-text {

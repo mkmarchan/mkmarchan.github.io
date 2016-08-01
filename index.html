@@ -5,13 +5,65 @@
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </head>
-  <body ng-app="myApp" ng-cloak layout="column">
-    <md-content flex layout="column">
-      <div flex="20">
+  <body ng-app="myApp" ng-cloak>
+    <md-content id="contentBody" layout="column">
+      <header id="mainHeader"> Mick Marchan </header>
+      <md-tabs md-dynamic-height md-border-bottom layout="column">
+        <md-tab label="Code" flex layout="column">
+          <md-content class="md-padding" flex>
+            <h1 class="md-display-2">Code</h1>
+            <p>Hello, this page is currently under construction as I am stumbling my way through angularjs
+              <br>
+              Please standby
+            </p>
+          </md-content>
+        </md-tab>
+        <md-tab label="Music" flex layout="column">
+          <md-content id="musicTab" class="md-padding" flex layout="column" ng-controller="MusicController as music">
+            <div id="musicHeader" layout="column">
+              <h1 style="text-align:center">{{me.username}}</h1>
+              <h4 style="text-align:center">{{me.followers_count | number}} followers, {{playTotal | number}} plays</h4>
+              <div layout="column" layout-align="center center">
+                <img ng-src="{{getArtURL(me.avatar_url)}}" height="auto" width="auto">
+              </div>
+            </div>
+            <div ng-repeat="track in myTracks">
+              <md-card ng-attr-id="{{'track' + track.id}}">
+                <md-card-title>
+                  <md-card-title-media ng-hide="track.artwork_url == null">
+                    <div class="md-media-lg card-media"><img ng-src="{{getArtURL(track.artwork_url)}}"></img></div>
+                  </md-card-title-media>
+                  <md-card-title-text>
+                    <span class="md-headline">{{track.title}}</span>
+                    <p ng-bind-html="track.description | nl2br"></p>
+                  </md-card-title-text>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="start center">
+                  <md-button ng-click="play(track.id)"><i class="material-icons">play_arrow</i></md-button>
+                  <md-button ng-click="pause(track.id)"><i class="material-icons">pause</i></md-button>
+                  <md-progress-linear md-mode="indeterminate" ng-show="isPlaying(track.id)"></md-progress-linear>
+                </md-card-actions>
+              </md-card>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="Social Media" flex layout="column">
+          <md-content class="md-padding" flex layout="column">
+            <h1 class="md-display-2">Tab Three</h1>
+            <a class="twitter-timeline" href="https://twitter.com/0x39C">Tweets by 0x39C</a>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+
+    <!--<md-content flex="100" layout="column">
+      <div>
         <header> Mick Marchan </header>
       </div>
-      <div ng-cloak flex="80" layout="column">
+      <div ng-cloak layout="column">
         <md-content flex layout="column">
           <md-tabs md-border-bottom flex layout="column">
             <md-tab label="Code" flex layout="column">
@@ -60,7 +112,7 @@
           </md-tabs>
         </md-content>
       </div>
-    </md-content>
+    </md-content>-->
 
     <!-- Angular Material requires Angular.js Libraries -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>

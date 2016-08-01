@@ -1,0 +1,11 @@
+#mainBody {
+  width: 640px;
+}
+
+#basicInfo {
+  padding: 0px 20px 20px;
+}
+
+#headerImage img {
+  border: 2px solid white;
+}
