@@ -23,11 +23,10 @@ app.controller('WindowController', ['$scope', '$location', '$anchorScroll',
     }
   });
 
-  $scope.scrollTabContent = function() {
-    console.log("hey");
+  /*$scope.scrollTabContent = function() {
     $location.hash('sticky-anchor');
     $anchorScroll();
-  }
+  }*/
 }]);
 
 /*app.controller('WindowController', ['$window', '$scope', function($window, $scope) {
