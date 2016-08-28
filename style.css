@@ -19,27 +19,32 @@ body {
   top: 0;
   border-right: 1px solid #bdc3c7 !important;
 }
+
 @media only screen and (min-width: 1000px) {
   .stick {
     width:998px;
   }
 }
+
 @media only screen and (min-width: 500px) {
   #contentBody {
     border-left: 1px solid #bdc3c7;
     border-right: 1px solid #bdc3c7;
     border-bottom: 1px solid #bdc3c7;
   }
+
   header {
     font-size: 10vw;
   }
 }
+
 @media only screen and (max-width: 500px) {
   header {
     padding: 10px;
     font-size: 50px;
   }
 }
+
 header {
   font-weight: bold;
   text-align: center;
@@ -54,6 +59,17 @@ md-card-title-text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.trackArt {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  width: 75%;
+}
+
+.trackText {
+  word-break: break-all;
 }
 
 #musicTab {

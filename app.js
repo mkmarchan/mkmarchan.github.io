@@ -62,7 +62,7 @@ app.controller('WindowController', ['$scope',
   };
 }]);*/
 
-app.controller('MusicController', ['$scope', 'scService', function($scope, scService) {
+app.controller('MusicController', ['$scope', '$mdDialog', 'scService', function($scope, $mdDialog, scService) {
 
   var setMe = function(res) {
     console.log("test");
@@ -70,6 +70,8 @@ app.controller('MusicController', ['$scope', 'scService', function($scope, scSer
     console.log(me.username);
     console.log(me.avatar_url);
   }
+
+  var paused = true;
 
   var totalPlays = function(myTracks) {
     var total = 0;
@@ -84,9 +86,10 @@ app.controller('MusicController', ['$scope', 'scService', function($scope, scSer
   };
 
   var setTrackPlayer = function(res, id) {
+    paused = false;
     currentTrackID = id;
-    trackPlayer = res;
-    trackPlayer.play();
+    $scope.trackPlayer = res;
+    $scope.trackPlayer.play();
   };
 
   var newTrackPlayer = function(id) {
@@ -94,9 +97,21 @@ app.controller('MusicController', ['$scope', 'scService', function($scope, scSer
     scService.getTrackPlayer(id, setTrackPlayer);
   };
 
-  var trackPlayer = null;
+  $scope.progress=0;
+
+  $scope.trackPlayer = null;
+
+  /*setInterval(function(){
+    if(paused==false){
+      $scope.progress = $scope.trackPlayer.currentTime() / $scope.trackPlayer.streamInfo.duration * 100;
+      console.log($scope.progress);
+    }
+  }
+    ,1000);*/
 
   var currentTrackID = null;
+
+  var trackArtArray = [];
 
   $scope.me = scService.getMe(setMe);
 
@@ -104,21 +119,42 @@ app.controller('MusicController', ['$scope', 'scService', function($scope, scSer
 
   $scope.myTracks = scService.getMyTracks(setTracks);
 
+  $scope.artClick = function(trackId) {
+    var artIndex = trackArtArray.indexOf(trackId);
+    console.log(artIndex);
+    if (artIndex < 0) {
+      trackArtArray.push(trackId);
+      console.log(trackArtArray);
+    } else {
+      trackArtArray.splice(artIndex, 1);
+      console.log(trackArtArray);
+    }
+  }
+
+  $scope.viewingArt = function(trackId) {
+    return trackArtArray.indexOf(trackId) >= 0;
+  }
+
   $scope.isPlaying = function(id) {
-    return id == currentTrackID;
+    return id == currentTrackID && !paused;
   }
 
   $scope.play = function(id) {
-    if(trackPlayer == null || currentTrackID != id) {
+    if($scope.trackPlayer == null || currentTrackID != id) {
       newTrackPlayer(id);
     } else {
-      trackPlayer.play();
+      paused = false;
+      currentTrackID = id;
+      $scope.trackPlayer.play();
     }
   };
 
   $scope.pause = function(id) {
-    if(trackPlayer == null || currentTrackID == id) {
-      trackPlayer.pause();
+    console.log("pausing" + id)
+    if($scope.trackPlayer == null || currentTrackID == id) {
+      paused = true;
+      $scope.trackPlayer.pause();
+      console.log("pause");
     }
   }
 
@@ -128,6 +164,15 @@ app.controller('MusicController', ['$scope', 'scService', function($scope, scSer
     }
     return null;
   };
+
+  /*$(SC).on('buffering_start', function() {
+    console.log("buffering");
+    $('#trackProgress' + currentTrackID).attr("md-mode", "query");
+  })
+  $(SC).on('play-resume', function() {
+    console.log("nowPlaying");
+    $('#trackProgress' + currentTrackID).attr("md-mode", "determinate");
+  })*/
 
 }]);
 
@@ -143,6 +188,7 @@ app.factory('scService', ['$http', function($http) {
     var getTrackPlayer = function(id, setTrackPlayer) {
       return SC.stream('/tracks/' + id).then(
         function(player) {
+          console.log(player);
           setTrackPlayer(player, id);
         });
       };

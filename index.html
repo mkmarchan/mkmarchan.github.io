@@ -46,24 +46,25 @@
             </md-card>
             <div ng-repeat="track in myTracks">
               <md-card ng-attr-id="{{'track' + track.id}}">
-                <md-card-header>
+                <md-card-header layout="row">
                   <md-card-avatar ng-hide="track.artwork_url == null">
-                    <img class="md-user-avatar" ng-src="{{getArtURL(track.artwork_url)}}">
+                    <img class="md-user-avatar" ng-src="{{getArtURL(track.artwork_url)}}" ng-click="artClick(track.id)">
                   </md-card-avatar>
-                  <md-card-header-text>
+                  <md-card-header-text flex>
                     <span class="md-headline">
-                      <div class=trackHead>{{track.title}}</div>
+                      <div class="trackHead" style="width:100%">{{track.title}}</div>
                     </span>
                     <span class="md-subhead">{{track.playback_count | number}} plays</span>
                   </md-card-header-text>
                 </md-card-header>
                 <md-card-content>
-                  <p ng-bind-html="track.description | nl2br"></p>
+                  <img ng-show="viewingArt(track.id)" class="trackArt" ng-src="{{getArtURL(track.artwork_url)}}">
+                  <p class="trackText" ng-bind-html="track.description | nl2br"></p>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="start center">
-                  <md-button ng-click="play(track.id)"><i class="material-icons">play_arrow</i></md-button>
-                  <md-button ng-click="pause(track.id)"><i class="material-icons">pause</i></md-button>
-                  <md-progress-linear md-mode="indeterminate" ng-show="isPlaying(track.id)"></md-progress-linear>
+                  <md-button ng-hide="isPlaying(track.id)" ng-click="play(track.id)"><i class="material-icons">play_arrow</i></md-button>
+                  <md-button ng-show="isPlaying(track.id)" ng-click="pause(track.id)"><i class="material-icons">pause</i></md-button>
+                  <md-progress-linear ng-attr-id="{{'trackProgress' + track.id}}" md-mode="query" ng-show="isPlaying(track.id)" ng-value="progress"></md-progress-linear>
                 </md-card-actions>
               </md-card>
             </div>
