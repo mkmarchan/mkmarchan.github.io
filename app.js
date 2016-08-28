@@ -9,8 +9,8 @@ var app = angular.module('myApp', ['ngMaterial'])
   .accentPalette('grey')
 });
 
-app.controller('WindowController', ['$scope', '$location', '$anchorScroll',
-  function($scope, $location, $anchorScroll) {
+app.controller('WindowController', ['$scope',
+  function($scope) {
   $(window).on('scroll', function() {
     var window_top = $(window).scrollTop();
     var div_top = $('#sticky-anchor').offset().top;
