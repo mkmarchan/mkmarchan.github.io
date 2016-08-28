@@ -49,6 +49,13 @@ md-card-title-text {
   padding-left: 20px;
 }
 
+.trackHead {
+  width:100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 #musicTab {
   background-color: #FAFAFA;
 }

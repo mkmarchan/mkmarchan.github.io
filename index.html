@@ -13,35 +13,53 @@
       <header id="mainHeader"> Mick Marchan </header>
       <div id="sticky-anchor"></div>
       <md-tabs md-dynamic-height md-border-bottom layout="column">
-        <md-tab label="Code" flex layout="column" >
+        <md-tab label="About Me" flex layout="column" >
           <md-content class="md-padding" flex>
-            <h1 class="md-display-2">Code</h1>
-            <p>Hello, this page is currently under construction as I am stumbling my way through angularjs
-              <br>
-              Please standby
+            <h1 class="md-display-2">About Me</h1>
+            <p>
             </p>
+          </md-content>
+        </md-tab>
+        <md-tab label="Code" flex layout="column">
+          <md-content class="md-padding" flex layout="column">
+            <h1 class="md-display-2">Code</h1>
           </md-content>
         </md-tab>
         <md-tab label="Music" flex layout="column">
           <md-content id="musicTab" class="md-padding" flex layout="column" ng-controller="MusicController as music">
-            <div id="musicHeader" layout="column">
-              <h1 style="text-align:center">{{me.username}}</h1>
-              <h4 style="text-align:center">{{me.followers_count | number}} followers, {{playTotal | number}} plays</h4>
-              <div layout="column" layout-align="center center">
-                <img ng-src="{{getArtURL(me.avatar_url)}}" height="auto" width="auto">
-              </div>
-            </div>
+            <md-card>
+              <md-card-header class="md-image-no-fill md-uer-avatar">
+                <md-card-avatar>
+                  <img class="md-user-avatar" ng-src="{{getArtURL(me.avatar_url)}}">
+                </md-card-avatar>
+                <md-card-header-text>
+                  <span class="md-headline">{{me.username}}</span>
+                  <span class="md-subhead">{{me.followers_count | number}} followers</span>
+                </md-card-header-text>
+              </md-card-header>
+              <md-card-content>
+                <p> Since 2014, I've produced music under the pseudonym "theta" using FL Studio </p>
+              </md-card-content>
+              <md-card-actions layout="row" layout-align="start center">
+                <md-button href="{{me.permalink_url}}">Navigate to SoundCloud</md-button>
+              </md-card-actions>
+            </md-card>
             <div ng-repeat="track in myTracks">
               <md-card ng-attr-id="{{'track' + track.id}}">
-                <md-card-title>
-                  <md-card-title-media ng-hide="track.artwork_url == null">
-                    <div class="md-media-lg card-media"><img ng-src="{{getArtURL(track.artwork_url)}}"></img></div>
-                  </md-card-title-media>
-                  <md-card-title-text>
-                    <span class="md-headline">{{track.title}}</span>
-                    <p ng-bind-html="track.description | nl2br"></p>
-                  </md-card-title-text>
-                </md-card-title>
+                <md-card-header>
+                  <md-card-avatar ng-hide="track.artwork_url == null">
+                    <img class="md-user-avatar" ng-src="{{getArtURL(track.artwork_url)}}">
+                  </md-card-avatar>
+                  <md-card-header-text>
+                    <span class="md-headline">
+                      <div class=trackHead>{{track.title}}</div>
+                    </span>
+                    <span class="md-subhead">{{track.playback_count | number}} plays</span>
+                  </md-card-header-text>
+                </md-card-header>
+                <md-card-content>
+                  <p ng-bind-html="track.description | nl2br"></p>
+                </md-card-content>
                 <md-card-actions layout="row" layout-align="start center">
                   <md-button ng-click="play(track.id)"><i class="material-icons">play_arrow</i></md-button>
                   <md-button ng-click="pause(track.id)"><i class="material-icons">pause</i></md-button>
@@ -49,12 +67,6 @@
                 </md-card-actions>
               </md-card>
             </div>
-          </md-content>
-        </md-tab>
-        <md-tab label="Social Media" flex layout="column">
-          <md-content class="md-padding" flex layout="column">
-            <h1 class="md-display-2">Tab Three</h1>
-            <a class="twitter-timeline" href="https://twitter.com/0x39C">Tweets by 0x39C</a>
           </md-content>
         </md-tab>
       </md-tabs>
