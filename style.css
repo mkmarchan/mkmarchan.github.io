@@ -7,22 +7,37 @@ body {
 }
 
 #contentBody {
-  border-left: 1px solid #bdc3c7;
-  border-right: 1px solid #bdc3c7;
-  border-bottom: 1px solid #bdc3c7;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.fix-to-top {
+.stick {
+  background-color: white;
+  width:100vw;
+  z-index: 100;
   position: fixed;
   top: 0;
 }
 
+@media only screen and (min-width: 500px) {
+  #contentBody {
+    border-left: 1px solid #bdc3c7;
+    border-right: 1px solid #bdc3c7;
+    border-bottom: 1px solid #bdc3c7;
+  }
+  header {
+    font-size: 10vw;
+  }
+}
+@media only screen and (max-width: 500px) {
+  header {
+    padding: 10px;
+    font-size: 50px;
+  }
+}
 header {
   font-weight: bold;
   text-align: center;
-  font-size: 64px;
 }
 
 md-card-title-text {

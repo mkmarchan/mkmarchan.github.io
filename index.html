@@ -8,9 +8,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </head>
-  <body ng-app="myApp" ng-cloak>
+  <body ng-app="myApp" ng-cloak ng-controller="WindowController">
     <md-content id="contentBody" layout="column">
       <header id="mainHeader"> Mick Marchan </header>
+      <div id="sticky-anchor"></div>
       <md-tabs md-dynamic-height md-border-bottom layout="column">
         <md-tab label="Code" flex layout="column">
           <md-content class="md-padding" flex>
