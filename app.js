@@ -9,21 +9,25 @@ var app = angular.module('myApp', ['ngMaterial'])
   .accentPalette('grey')
 });
 
-app.controller('WindowController', ['$window', '$scope', function($window, $scope) {
+app.controller('WindowController', ['$scope', '$location', '$anchorScroll',
+  function($scope, $location, $anchorScroll) {
   $(window).on('scroll', function() {
     var window_top = $(window).scrollTop();
-    console.log($('#sticky-anchor'));
     var div_top = $('#sticky-anchor').offset().top;
     if (window_top > div_top) {
-      console.log("at Top");
         $('md-tabs-wrapper').addClass('stick');
         $('#sticky-anchor').height($('md-tabs-wrapper').outerHeight());
     } else {
-      console.log("not at top");
         $('md-tabs-wrapper').removeClass('stick');
         $('#sticky-anchor').height(0);
     }
   });
+
+  $scope.scrollTabContent = function() {
+    console.log("hey");
+    $location.hash('sticky-anchor');
+    $anchorScroll();
+  }
 }]);
 
 /*app.controller('WindowController', ['$window', '$scope', function($window, $scope) {

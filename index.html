@@ -13,7 +13,7 @@
       <header id="mainHeader"> Mick Marchan </header>
       <div id="sticky-anchor"></div>
       <md-tabs md-dynamic-height md-border-bottom layout="column">
-        <md-tab label="Code" flex layout="column">
+        <md-tab label="Code" flex layout="column" ng-click="scrollTabContent()">
           <md-content class="md-padding" flex>
             <h1 class="md-display-2">Code</h1>
             <p>Hello, this page is currently under construction as I am stumbling my way through angularjs
@@ -22,7 +22,7 @@
             </p>
           </md-content>
         </md-tab>
-        <md-tab label="Music" flex layout="column">
+        <md-tab label="Music" flex layout="column" ng-click="scrollTabContent()">
           <md-content id="musicTab" class="md-padding" flex layout="column" ng-controller="MusicController as music">
             <div id="musicHeader" layout="column">
               <h1 style="text-align:center">{{me.username}}</h1>
@@ -51,7 +51,7 @@
             </div>
           </md-content>
         </md-tab>
-        <md-tab label="Social Media" flex layout="column">
+        <md-tab label="Social Media" flex layout="column" ng-click="scrollTabContent()">
           <md-content class="md-padding" flex layout="column">
             <h1 class="md-display-2">Tab Three</h1>
             <a class="twitter-timeline" href="https://twitter.com/0x39C">Tweets by 0x39C</a>
