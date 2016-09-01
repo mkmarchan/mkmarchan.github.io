@@ -9,20 +9,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </head>
   <body ng-app="myApp" ng-cloak ng-controller="WindowController">
+    <div id="backgroundImage"></div>
     <md-content id="contentBody" layout="column">
       <header id="mainHeader"> Mick Marchan </header>
       <div id="sticky-anchor"></div>
-      <md-tabs md-dynamic-height md-border-bottom layout="column">
+      <md-tabs md-dynamic-height md-stretch-tabs="always" md-swipe-content md-border-bottom layout="column">
         <md-tab label="About Me" flex layout="column" >
           <md-content class="md-padding" flex>
             <h1 class="md-display-2">About Me</h1>
-            <p>
+            <p class="descriptionText">I'm a Sophomore at the University of Washington majoring in Computer Engineering and minoring in Digital and Experimental Arts.
+              I've been programming since my senior year of high school and producing music since 7th grade.
+              I love dogs, raw fish, and Death Grips.
             </p>
           </md-content>
         </md-tab>
         <md-tab label="Code" flex layout="column">
           <md-content class="md-padding" flex layout="column">
             <h1 class="md-display-2">Code</h1>
+            <p style="text-align: center"> SECTION CURRENTLY UNDER CONSTRUCTION </p>
+            <img src="./resources/Shaq and a Seal.jpg" height="auto" width="300px" style="margin: auto">
           </md-content>
         </md-tab>
         <md-tab label="Music" flex layout="column">
@@ -52,7 +57,9 @@
                   </md-card-avatar>
                   <md-card-header-text flex>
                     <span class="md-headline">
-                      <div class="trackHead" style="width:100%">{{track.title}}</div>
+                      <div class="trackHead" style="width:100%">
+                        <a href="{{track.permalink_url}}">{{track.title}}</a>
+                      </div>
                     </span>
                     <span class="md-subhead">{{track.playback_count | number}} plays</span>
                   </md-card-header-text>

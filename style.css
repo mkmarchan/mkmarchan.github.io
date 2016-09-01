@@ -3,7 +3,17 @@
 body {
   font-family: 'Roboto', sans-serif;
   overflow-y: scroll;
-  background-color: #FAFAFA;
+}
+
+/* TODO: while track is playing, put art as background image that is blurred */
+#backgroundImage {
+  z-index:0;
+  position:fixed;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  /*background-image: url('https://i1.sndcdn.com/artworks-000082482785-uyihnm-t500x500.jpg');*/
+  background-size: 100%;
 }
 
 #contentBody {
@@ -50,6 +60,10 @@ header {
   text-align: center;
 }
 
+.descriptionText {
+  text-indent: 1em;
+}
+
 md-card-title-text {
   padding-left: 20px;
 }
@@ -59,6 +73,11 @@ md-card-title-text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+}
+
+.trackHead > a {
+  text-decoration:none !important;
 }
 
 .trackArt {
