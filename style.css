@@ -40,7 +40,7 @@ body {
   #contentBody {
     border-left: 1px solid #bdc3c7;
     border-right: 1px solid #bdc3c7;
-    border-bottom: 1px solid #bdc3c7;
+    /*border-bottom: 1px solid #bdc3c7;*/
   }
 
   header {
@@ -56,7 +56,11 @@ body {
 }
 
 header {
-  font-weight: bold;
+  font-weight:300;
+  text-align: center;
+}
+
+.subheader {
   text-align: center;
 }
 

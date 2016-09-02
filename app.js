@@ -2,7 +2,7 @@ SC.initialize({
   client_id: 'd9611ceddfd118f8d3c6890fa3b0a0f5'
 });
 
-var app = angular.module('myApp', ['ngMaterial'])
+var app = angular.module('myApp', ['ngMaterial', 'infinite-scroll'])
 .config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
   .primaryPalette('blue-grey')
@@ -29,40 +29,7 @@ app.controller('WindowController', ['$scope',
   }*/
 }]);
 
-/*app.controller('WindowController', ['$window', '$scope', function($window, $scope) {
-  var getHeight = function() {
-    console.log($window.document.getElementById('mainHeader').height());
-    console.log("test");
-    return $window.document.getElementById('mainHeader').height;
-  };
-
-  $scope.headerHeight = getHeight();
-}]);*/
-
-/*app.directive('setClassWhenAtTop', ['$window', function($window) {
-  var $win = angular.element($window);
-
-  return {
-    restrict: 'A',
-    link: function (scope, element, attrs) {
-      var topClass = attrs.setClassWhenAtTop, // get CSS class from directive's attribute value
-      offsetTop = 109; //element.position().top; // get element's offset top relative to document
-
-      $win.on('scroll', function (e) {
-        console.log(offsetTop);
-        console.log($win.scrollTop());
-        if ($win.scrollTop() >= offsetTop) {
-          element.addClass(topClass);
-          console.log("hit");
-        } else {
-          element.removeClass(topClass);
-        }
-      });
-    }
-  };
-}]);*/
-
-app.controller('MusicController', ['$scope', '$mdDialog', 'scService', function($scope, $mdDialog, scService) {
+/*app.controller('MusicController', ['$scope', '$mdDialog', '$sce', 'scService', function($scope, $mdDialog, $sce, scService) {
 
   var setMe = function(res) {
     console.log("test");
@@ -107,7 +74,7 @@ app.controller('MusicController', ['$scope', '$mdDialog', 'scService', function(
       console.log($scope.progress);
     }
   }
-    ,1000);*/
+    ,1000);
 
   var currentTrackID = null;
 
@@ -118,6 +85,8 @@ app.controller('MusicController', ['$scope', '$mdDialog', 'scService', function(
   $scope.playTotal = null;
 
   $scope.myTracks = scService.getMyTracks(setTracks);
+
+  $scope.tracks = [];
 
   $scope.artClick = function(trackId) {
     var artIndex = trackArtArray.indexOf(trackId);
@@ -164,6 +133,122 @@ app.controller('MusicController', ['$scope', '$mdDialog', 'scService', function(
     }
     return null;
   };
+
+  $scope.getWidgetURL = function(trackId) {
+    var first = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/";
+    var last = "&amp;color=607d8b&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false";
+    var url = first + trackId + last;
+    return $sce.trustAsResourceUrl(url);
+  }
+
+  $scope.loadMoreTracks = function() {
+    var lastIndex = $scope.tracks.length;
+    console.log(lastIndex);
+    for(var i = 0; i < 2; i++) {
+      console.log(i);
+      console.log($scope.myTracks);
+      if($scope.myTracks[lastIndex + i] != null) {
+        $scope.tracks.push($scope.myTracks[lastIndex + i]);
+      }
+    }
+  }
+
+  /*$(SC).on('buffering_start', function() {
+    console.log("buffering");
+    $('#trackProgress' + currentTrackID).attr("md-mode", "query");
+  })
+  $(SC).on('play-resume', function() {
+    console.log("nowPlaying");
+    $('#trackProgress' + currentTrackID).attr("md-mode", "determinate");
+  })
+
+}]);*/
+
+app.controller('MusicController', ['$scope', '$mdDialog', '$sce', 'scService', function($scope, $mdDialog, $sce, scService) {
+
+  var setMe = function(res) {
+    console.log("test");
+    $scope.me = res;
+    console.log(me.username);
+    console.log(me.avatar_url);
+  }
+
+  var setTracks = function(res) {
+    $scope.myTracks = res;
+    $scope.playTotal = totalPlays(res);
+  };
+
+  $scope.trackPlayer = null;
+
+  /*setInterval(function(){
+    if(paused==false){
+      $scope.progress = $scope.trackPlayer.currentTime() / $scope.trackPlayer.streamInfo.duration * 100;
+      console.log($scope.progress);
+    }
+  }
+    ,1000);*/
+
+  var currentTrackID = null;
+
+  var trackArtArray = [];
+
+  $scope.me = scService.getMe(setMe);
+
+  $scope.playTotal = null;
+
+  $scope.myTracks = scService.getMyTracks(setTracks);
+
+  $scope.tracks = [];
+
+  $scope.artClick = function(trackId) {
+    var artIndex = trackArtArray.indexOf(trackId);
+    console.log(artIndex);
+    if (artIndex < 0) {
+      trackArtArray.push(trackId);
+      console.log(trackArtArray);
+    } else {
+      trackArtArray.splice(artIndex, 1);
+      console.log(trackArtArray);
+    }
+  }
+
+  $scope.viewingArt = function(trackId) {
+    return trackArtArray.indexOf(trackId) >= 0;
+  }
+
+  $scope.isPlaying = function(id) {
+    return id == currentTrackID
+  }
+
+  $scope.play = function(id) {
+    currentTrackID = id;
+  };
+
+  $scope.getArtURL = function(url) {
+    if (url != null) {
+      return url.slice(0, -9) + 't500x500.jpg';
+    }
+    return null;
+  };
+
+  $scope.getWidgetURL = function(trackId) {
+    if($scope.isPlaying(trackId)) {
+      var first = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/";
+      var last = "&amp;color=607d8b&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false";
+      var url = first + trackId + last;
+      return $sce.trustAsResourceUrl(url);
+    }
+    return null;
+  }
+
+  $scope.loadMoreTracks = function() {
+    var lastIndex = $scope.tracks.length;
+    for(var i = 0; i < 5; i++) {
+      if($scope.myTracks[lastIndex + i] != null) {
+        $scope.tracks.push($scope.myTracks[lastIndex + i]);
+      }
+    }
+  }
 
   /*$(SC).on('buffering_start', function() {
     console.log("buffering");
@@ -212,6 +297,12 @@ app.factory('scService', ['$http', function($http) {
         return function (text) {
           return text ? $sce.trustAsHtml(text.replace(/\n/g, '<br/>')) : '';
         };
+      })
+
+      app.filter('slashhyph', function() {
+        return function (text) {
+          return text.replace(/\//g, '-');
+        }
       })
 
       /*function play(id) {
