@@ -234,7 +234,7 @@ app.controller('MusicController', ['$scope', '$mdDialog', '$sce', 'scService', f
   $scope.getWidgetURL = function(trackId) {
     if($scope.isPlaying(trackId)) {
       var first = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/";
-      var last = "&amp;color=607d8b&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false";
+      var last = "&amp;color=455A64&amp;auto_play=true&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false";
       var url = first + trackId + last;
       return $sce.trustAsResourceUrl(url);
     }
