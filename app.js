@@ -297,13 +297,20 @@ app.factory('scService', ['$http', function($http) {
         return function (text) {
           return text ? $sce.trustAsHtml(text.replace(/\n/g, '<br/>')) : '';
         };
-      })
+      });
 
       app.filter('slashhyph', function() {
         return function (text) {
           return text.replace(/\//g, '-');
         }
-      })
+      });
+
+      app.filter('parseUrlFilter', function () {
+        var urlPattern = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/gi;
+        return function (text, target) {
+            return text.replace(urlPattern, '<a target="' + target + '" href="$&">$&</a>')
+        };
+      });
 
       /*function play(id) {
       alert("im in");

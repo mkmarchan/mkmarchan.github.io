@@ -6,14 +6,32 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+    <!-- Your application bootstrap  -->
+    <script type='text/javascript' src='./services/ng-infinite-scroll.min.js'></script>
+
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
   </head>
   <body ng-app="myApp" ng-cloak ng-controller="WindowController">
     <div id="backgroundImage"></div>
-    <md-content id="contentBody" layout="column">
+    <md-content id="content" layout="column">
       <header id="mainHeader"> Mick Marchan </header>
       <div id="sticky-anchor"></div>
-      <md-tabs md-dynamic-height md-stretch-tabs="always" md-swipe-content md-border-bottom layout="column">
+      <md-tabs id="tabs" md-dynamic-height md-stretch-tabs="always" md-swipe-content md-border-bottom layout="column">
         <md-tab label="About Me" flex layout="column" >
           <md-content class="md-padding" flex>
             <h1 class="md-display-2">About Me</h1>
@@ -71,7 +89,7 @@
                   </md-card-header>
                   <md-card-content ng-hide="track.description.length == 0">
                     <img ng-show="viewingArt(track.id)" class="trackArt" ng-src="{{getArtURL(track.artwork_url)}}">
-                    <p class="trackText" ng-bind-html="track.description | nl2br"></p>
+                    <p class="trackText" ng-bind-html="track.description | parseUrlFilter | nl2br"></p>
                   </md-card-content>
                   <md-card-actions layout="row" layout-align="start center">
                     <md-button ng-hide="isPlaying(track.id)" ng-click="play(track.id)"><i class="material-icons">play_arrow</i></md-button>
@@ -87,24 +105,29 @@
           </md-content>
         </md-tab>
       </md-tabs>
+      <div class="buttonFooter" layout="row" layout-align="center center">
+        <a href="./resources/Mick Marchan Resume 082916.pdf">
+          <md-button class="md-fab" aria-label="resume">
+            <md-tooltip md-direction="top">
+              Resume
+            </md-tooltip>
+            <img src="./resources/description.png" height="24" width="auto">
+          </md-button>
+        </a>
+        <a href="https://www.linkedin.com/in/mick-marchan-034353a0">
+          <md-tooltip md-direction="top">
+            LinkedIn
+          </md-tooltip>
+          <md-button class="md-fab" aria-label="linkedin"><img src="./resources/in.png" height="24" width="auto"></md-button>
+        </a>
+        <a href="https://soundcloud.com/mickmarchan">
+          <md-tooltip md-direction="top">
+            SoundCloud
+          </md-tooltip>
+          <md-button class="md-fab" aria-label="soundcloud"><img src="./resources/sc.png" height="36" width="auto"></md-button>
+        </a>
+      </div>
     </md-content>
-
-    <!-- Angular Material requires Angular.js Libraries -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
-    <script type='text/javascript' src='./services/ng-infinite-scroll.min.js'></script>
-
-
-    <!-- Angular Material Library -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
-
-    <!-- Your application bootstrap  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   </body>
 </html>
