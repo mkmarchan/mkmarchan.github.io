@@ -31,7 +31,7 @@
     <md-content id="content" layout="column">
       <header id="mainHeader"> Mick Marchan </header>
       <div id="sticky-anchor"></div>
-      <md-tabs id="tabs" md-dynamic-height md-stretch-tabs="always" md-swipe-content md-border-bottom layout="column">
+      <md-tabs id="tabs" md-dynamic-height md-stretch-tabs="always" md-enable-disconnect md-swipe-content md-border-bottom layout="column">
         <md-tab label="About Me" flex layout="column" >
           <md-content class="md-padding" flex>
             <h1 class="md-display-2">About Me</h1>
@@ -75,7 +75,7 @@
               <div ng-repeat="track in tracks">
                 <md-card ng-attr-id="{{'track' + track.id}}">
                   <md-card-header layout="row">
-                    <md-card-avatar ng-hide="track.artwork_url == null">
+                    <md-card-avatar ng-if="track.artwork_url != null">
                       <img class="md-user-avatar" ng-src="{{getArtURL(track.artwork_url)}}" ng-click="artClick(track.id)">
                     </md-card-avatar>
                     <md-card-header-text flex>
@@ -87,13 +87,13 @@
                       <span class="md-subhead">{{track.created_at.substring(0,10) | slashhyph | date : longDate}}</span>
                     </md-card-header-text>
                   </md-card-header>
-                  <md-card-content ng-hide="track.description.length == 0">
-                    <img ng-show="viewingArt(track.id)" class="trackArt" ng-src="{{getArtURL(track.artwork_url)}}">
+                  <md-card-content ng-if="track.description.length != 0">
+                    <img ng-if="viewingArt(track.id)" class="trackArt" ng-src="{{getArtURL(track.artwork_url)}}">
                     <p class="trackText" ng-bind-html="track.description | parseUrlFilter | nl2br"></p>
                   </md-card-content>
                   <md-card-actions layout="row" layout-align="start center">
-                    <md-button ng-hide="isPlaying(track.id)" ng-click="play(track.id)"><i class="material-icons">play_arrow</i></md-button>
-                    <iframe ng-show="isPlaying(track.id)" width="100%" height="166" scrolling="no" frameborder="no" ng-src="{{getWidgetURL(track.id)}}"></iframe>
+                    <md-button ng-if="!isPlaying(track.id)" ng-click="play(track.id)"><i class="material-icons">play_arrow</i></md-button>
+                    <iframe ng-if="isPlaying(track.id)" width="100%" height="166" scrolling="no" frameborder="no" ng-src="{{getWidgetURL(track.id)}}"></iframe>
                     <!-- CUSTOM PLAY BUTTON AND WHAT NOT WILL BE DEVELOPED LATER, PROVING TO BE DIFFICULT
                     <md-button ng-hide="isPlaying(track.id)" ng-click="play(track.id)"><i class="material-icons">play_arrow</i></md-button>
                     <md-button ng-show="isPlaying(track.id)" ng-click="pause(track.id)"><i class="material-icons">pause</i></md-button>
