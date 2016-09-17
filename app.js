@@ -9,9 +9,9 @@ var app = angular.module('myApp', ['ngMaterial', 'infinite-scroll'])
   .accentPalette('grey')
 });
 
-app.controller('WindowController', ['$scope', '$window', 
-  function($scope, $window) {
-    /*$(window).on('scroll', function() {
+app.controller('WindowController', ['$scope',
+  function($scope) {
+    $(window).on('scroll', function() {
       var window_top = $(window).scrollTop();
       var div_top = $('#sticky-anchor').offset().top;
       if (window_top > div_top) {
@@ -21,7 +21,7 @@ app.controller('WindowController', ['$scope', '$window',
           $('md-tabs-wrapper').removeClass('stick');
           $('#sticky-anchor').height(0);
       }
-    });*/
+    });
 
   /*$scope.scrollTabContent = function() {
     $location.hash('sticky-anchor');
