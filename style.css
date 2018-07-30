@@ -19,7 +19,6 @@ body {
 
 #content {
   min-height:100%;
-  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -45,11 +44,11 @@ body {
   border-right: 1px solid #E0E0E0 !important;
 }
 
-@media only screen and (min-width: 1000px) {
+/* @media only screen and (min-width: 1000px) {
   .stick {
     width:998px;
   }
-}
+} */
 
 @media only screen and (min-width: 500px) {
   #content {
@@ -116,6 +115,34 @@ md-card-title-text {
   word-break: break-all;
 }
 
-#musicTab {
-  background-color: #FAFAFA;
+.tabContent {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+#picture {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  max-width: 922px;
+}
+
+.projectHeader {
+  text-align: center;
+}
+
+.aspectRatio {
+  position: relative;
+  width: 50%;
+  height: 0;
+  margin: auto;
+  padding-bottom: 28%;
+}
+
+.projectDemo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  left: 0;
+  top: 0;
 }

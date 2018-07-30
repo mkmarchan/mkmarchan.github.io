@@ -2,21 +2,21 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Angular Material style sheet -->
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 
     <!-- Angular Material requires Angular.js Libraries -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
 
 
     <!-- Angular Material Library -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
 
     <!-- Your application bootstrap  -->
     <script type='text/javascript' src='./services/ng-infinite-scroll.min.js'></script>
@@ -32,24 +32,34 @@
       <header id="mainHeader"> Mick Marchan </header>
       <div id="sticky-anchor"></div>
       <md-tabs id="tabs" md-dynamic-height md-stretch-tabs="always" md-swipe-content md-border-bottom layout="column">
-        <md-tab label="About Me" flex layout="column" >
-          <md-content class="md-padding" flex>
-            <h1 class="md-display-2">About Me</h1>
-            <p class="descriptionText">I'm a Sophomore at the University of Washington majoring in Computer Engineering and minoring in Digital and Experimental Arts.
-              I've been programming since my senior year of high school and producing music since 7th grade.
-              I love dogs, raw fish, and Death Grips.
+        <md-tab label="projects" flex layout="column">
+          <md-content class="md-padding tabContent" flex layout="column">
+            <h1 class="md-display-2 projectHeader">AIRWAVE</h1>
+            <p>AIRWAVE was a collaborative project between Mike Notter and I for the
+              Sound and Media Computer Science and Engineering Capstone (CSE481i). The aim was to create a better way to control
+              granular synthesis in real-time. Current granular synthesis controllers are difficult to use in a live setting as there are too many
+              parameters to manipulate with just knobs and sliders. By tracking the orientation and position of a user's hands with
+              a Leap Motion sensor, we were able to unlock simultaneous control of 6 synthesis parameters (volume, panning, grain trigger frequency,
+              grain duration, playback speed, and grain index).
             </p>
-          </md-content>
-        </md-tab>
-        <md-tab label="Code" flex layout="column">
-          <md-content class="md-padding" flex layout="column">
-            <h1 class="md-display-2">Code</h1>
+            <div class="aspectRatio">
+              <iframe class="projectDemo" src="https://www.youtube.com/embed/P2xhWaOES2g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <h1 class="md-display-2 projectHeader">LBHRTAM</h1>
+            <p>Low-Budget Head Rotation Tracking and Ambisonic Mapping (LBHRTAM) is my Sound in Space (DXARTS 567) final project where I
+              create a low-budget solution to monitoring ambisonic audio. This solution involves strapping an Android smartphone to your head and having
+              it send orientation information to a computer running a SuperCollider script that rotates a soundfield accordingly.
+            </p>
+            <div class="aspectRatio">
+              <iframe class="projectDemo" src="https://www.youtube.com/embed/oUflGkqMN3M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <h1 class="md-display-2 projectHeader">Audio Looper</h1>
             <p style="text-align: center"> SECTION CURRENTLY UNDER CONSTRUCTION </p>
             <img src="./resources/Shaq and a Seal.jpg" height="auto" width="300px" style="margin: auto">
           </md-content>
         </md-tab>
         <md-tab label="Music" flex layout="column">
-          <md-content id="musicTab" class="md-padding" flex layout="column" ng-controller="MusicController as music">
+          <md-content class="md-padding tabContent" flex layout="column" ng-controller="MusicController as music">
             <md-card>
               <md-card-header class="md-image-no-fill md-uer-avatar">
                 <md-card-avatar>
@@ -104,31 +114,39 @@
             </div>
           </md-content>
         </md-tab>
+        <md-tab label="About Me" flex layout="column" >
+          <md-content class="md-padding tabContent" flex layout="column">
+            <h1 class="md-display-2">Background</h1>
+            <p class="descriptionText">I'm a Senior at the University of Washington majoring in Computer Engineering and minoring in Digital and Experimental Arts
+              (DXARTS) graduating in March 2019. I like to write / produce music and generally play around with audio. I've interned as a software engineer at DataHouse (Honolulu), Cisco Systems (Seattle), and Microsoft (Redmond).
+            </p>
+            <img id="picture" src="./resources/mick.jpg" height="auto" width="50%" style="margin: auto">
+            <div class="" layout="row" layout-align="center center">
+              <a href="./resources/Mick Marchan Resume.pdf">
+                <md-button class="md-fab" aria-label="resume">
+                  <md-tooltip md-direction="top">
+                    Resume
+                  </md-tooltip>
+                  <img src="./resources/description.png" height="24" width="auto">
+                </md-button>
+              </a>
+              <a href="https://www.linkedin.com/in/mick-marchan-034353a0">
+                <md-tooltip md-direction="top">
+                  LinkedIn
+                </md-tooltip>
+                <md-button class="md-fab" aria-label="linkedin"><img src="./resources/in.png" height="24" width="auto"></md-button>
+              </a>
+              <a href="https://soundcloud.com/mickmarchan">
+                <md-tooltip md-direction="top">
+                  SoundCloud
+                </md-tooltip>
+                <md-button class="md-fab" aria-label="soundcloud"><img src="./resources/sc.png" height="36" width="auto"></md-button>
+              </a>
+            </div>
+          </md-content>
+        </md-tab>
       </md-tabs>
-      <div class="buttonFooter" layout="row" layout-align="center center">
-        <a href="./resources/Mick Marchan Resume.pdf">
-          <md-button class="md-fab" aria-label="resume">
-            <md-tooltip md-direction="top">
-              Resume
-            </md-tooltip>
-            <img src="./resources/description.png" height="24" width="auto">
-          </md-button>
-        </a>
-        <a href="https://www.linkedin.com/in/mick-marchan-034353a0">
-          <md-tooltip md-direction="top">
-            LinkedIn
-          </md-tooltip>
-          <md-button class="md-fab" aria-label="linkedin"><img src="./resources/in.png" height="24" width="auto"></md-button>
-        </a>
-        <a href="https://soundcloud.com/mickmarchan">
-          <md-tooltip md-direction="top">
-            SoundCloud
-          </md-tooltip>
-          <md-button class="md-fab" aria-label="soundcloud"><img src="./resources/sc.png" height="36" width="auto"></md-button>
-        </a>
-      </div>
     </md-content>
-
   </body>
 </html>
 
