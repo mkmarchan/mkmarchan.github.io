@@ -34,28 +34,42 @@
       <md-tabs id="tabs" md-dynamic-height md-stretch-tabs="always" md-border-bottom layout="column">
         <md-tab label="projects" flex layout="column">
           <md-content class="md-padding tabContent" flex layout="column">
-            <h1 class="md-display-2 projectHeader">AIRWAVE</h1>
-            <p>AIRWAVE was a collaborative project between Mike Notter and I for the
-              Sound and Media Computer Science and Engineering Capstone (CSE481i). The aim was to create a better way to control
-              granular synthesis in real-time. Current granular synthesis controllers are difficult to use in a live setting as there are too many
-              parameters to manipulate with just knobs and sliders. By tracking the orientation and position of a user's hands with
-              a Leap Motion sensor, we were able to unlock simultaneous control of 6 synthesis parameters (volume, panning, grain trigger frequency,
-              grain duration, playback speed, and grain index).
-            </p>
-            <div class="aspectRatio">
-              <iframe class="projectDemo" src="https://www.youtube.com/embed/P2xhWaOES2g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <h1 class="md-display-2 projectHeader">LBHRTAM</h1>
-            <p>Low-Budget Head Rotation Tracking and Ambisonic Mapping (LBHRTAM) is my Sound in Space (DXARTS 567) final project where I
-              create a low-budget solution to monitoring ambisonic audio. This solution involves strapping an Android smartphone to your head and having
-              it send orientation information to a computer running a SuperCollider script that rotates a soundfield accordingly.
-            </p>
-            <div class="aspectRatio">
-              <iframe class="projectDemo" src="https://www.youtube.com/embed/oUflGkqMN3M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <h1 class="md-display-2 projectHeader">Audio Looper</h1>
-            <p style="text-align: center"> SECTION CURRENTLY UNDER CONSTRUCTION </p>
-            <img src="./resources/Shaq and a Seal.jpg" height="auto" width="300px" style="margin: auto">
+            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-row-height-sm="37:20" md-gutter="5%">
+              <md-grid-tile>
+                <md-content class="projectDescription" layout="column">
+                  <h2 class="md-display-2 projectHeader">AIRWAVE</h2>
+                  <p>A granular synthesis controller composed of a Leap Motion sending
+                    data collected through Python to SuperCollider via OSC.
+                  </p>
+                </md-content>
+              </md-grid-tile>
+              <md-grid-tile>
+                <iframe class="projectDemo" src="https://www.youtube.com/embed/P2xhWaOES2g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </md-grid-tile>
+            </md-grid-list>
+            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-row-height-sm="37:20" md-gutter="5%">
+              <md-grid-tile>
+                <md-content class="projectDescription" layout="column">
+                  <h2 class="md-display-2 projectHeader">LBHRTAM</h2>
+                  <p>Cheap binaural ambisonic monitoring by strapping a smartphone to your head.
+                    Rotational information collected from an Android app passed to SuperCollider via OSC. </p>
+                </md-content>
+              </md-grid-tile>
+              <md-grid-tile>
+                <iframe class="projectDemo" src="https://www.youtube.com/embed/oUflGkqMN3M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </md-grid-tile>
+            </md-grid-list>
+            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1"  md-row-height="16:9" md-row-height-sm="37:20" md-gutter="5%">
+              <md-grid-tile>
+                <md-content class="projectDescription" layout="column">
+                  <h2 class="md-display-2 projectHeader">Audio Looper</h2>
+                  <p>A 4-channel looper with pitch shifting and distortion sound effects implemented on an FPGA</p>
+                </md-content>
+              </md-grid-tile>
+              <md-grid-tile>
+                <iframe class="projectDemo" src="https://www.youtube.com/embed/7YYqN82q8qc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </md-grid-tile>
+            </md-grid-list>
           </md-content>
         </md-tab>
         <md-tab label="Music" flex layout="column">

@@ -127,22 +127,13 @@ md-card-title-text {
 }
 
 .projectHeader {
-  text-align: center;
+  margin:0 !important;
 }
 
-.aspectRatio {
-  position: relative;
-  width: 50%;
-  height: 0;
-  margin: auto;
-  padding-bottom: 28%;
+.projectDescription {
 }
 
 .projectDemo {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  left: 0;
-  top: 0;
+  height: 95%;
+  width: 95%;
 }
