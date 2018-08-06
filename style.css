@@ -23,7 +23,6 @@ body {
 }
 
 #tabs {
-  margin-bottom: 109px;
 }
 
 .buttonFooter {
@@ -121,8 +120,6 @@ md-card-title-text {
 }
 
 #picture {
-  padding-top: 32px;
-  padding-bottom: 32px;
   max-width: 922px;
 }
 
@@ -131,9 +128,32 @@ md-card-title-text {
 }
 
 .projectDescription {
+  width:100%
 }
 
-.projectDemo {
-  height: 95%;
-  width: 95%;
+.project {
+  margin-bottom: 32px;
+}
+
+
+@media only screen and (min-width: 960px) {
+  .projectDemo {
+    height: 95%;
+    width: 95%;
+  }
+}
+
+
+@media only screen and (max-width: 960px) {
+  .projectDemo {
+    height: 200px;
+    width: 355px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .projectDemo {
+    height: 95%;
+    width: 95%;
+  }
 }

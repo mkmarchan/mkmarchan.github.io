@@ -34,7 +34,7 @@
       <md-tabs id="tabs" md-dynamic-height md-stretch-tabs="always" md-border-bottom layout="column">
         <md-tab label="projects" flex layout="column">
           <md-content class="md-padding tabContent" flex layout="column">
-            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-row-height-sm="37:20" md-gutter="5%">
+            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-row-height-sm="200px" md-gutter="5%">
               <md-grid-tile>
                 <md-content class="projectDescription" layout="column">
                   <h2 class="md-display-2 projectHeader">AIRWAVE</h2>
@@ -47,7 +47,7 @@
                 <iframe class="projectDemo" src="https://www.youtube.com/embed/P2xhWaOES2g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
               </md-grid-tile>
             </md-grid-list>
-            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-row-height-sm="37:20" md-gutter="5%">
+            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-row-height-sm="200px" md-gutter="5%">
               <md-grid-tile>
                 <md-content class="projectDescription" layout="column">
                   <h2 class="md-display-2 projectHeader">LBHRTAM</h2>
@@ -59,11 +59,11 @@
                 <iframe class="projectDemo" src="https://www.youtube.com/embed/oUflGkqMN3M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
               </md-grid-tile>
             </md-grid-list>
-            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1"  md-row-height="16:9" md-row-height-sm="37:20" md-gutter="5%">
+            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1"  md-row-height="16:9" md-row-height-sm="200px" md-gutter="5%">
               <md-grid-tile>
                 <md-content class="projectDescription" layout="column">
-                  <h2 class="md-display-2 projectHeader">Audio Looper</h2>
-                  <p>A 4-channel looper with pitch shifting and distortion sound effects implemented on an FPGA</p>
+                  <h2 class="md-display-2 projectHeader">Looper</h2>
+                  <p>A 4-channel looper with pitch shifting and distortion sound effects implemented on an FPGA.</p>
                 </md-content>
               </md-grid-tile>
               <md-grid-tile>
@@ -86,8 +86,7 @@
               </md-card-header>
               <md-card-content>
                 <p class="descriptionText">
-                  Since 2014, I've produced music under the pseudonym <i>theta</i> through the Digital Audio Workstation (DAW) FL Studio.
-                  I am currently in the process of learning a new DAW, Ableton, and plan to complete a full length album by 2019.
+                  Since 2014, I've produced music under the pseudonym <i>theta</i>. I mostly publish trash, but plan to complete a full length album in 2019.
                 </p>
               </md-card-content>
               <md-card-actions layout="row" layout-align="start center">
@@ -130,11 +129,19 @@
         </md-tab>
         <md-tab label="About Me" flex layout="column" >
           <md-content class="md-padding tabContent" flex layout="column">
-            <h1 class="md-display-2">Background</h1>
-            <p class="descriptionText">I'm a Senior at the University of Washington majoring in Computer Engineering and minoring in Digital and Experimental Arts
-              (DXARTS) graduating in March 2019. I like to write / produce music and generally play around with audio. I've interned as a software engineer at DataHouse (Honolulu), Cisco Systems (Seattle), and Microsoft (Redmond).
-            </p>
-            <img id="picture" src="./resources/mick.jpg" height="auto" width="50%" style="margin: auto">
+            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-row-height="1:1" md-gutter="5%">
+              <md-grid-tile>
+                <md-content layout="column">
+                  <h1 class="md-display-2">Background</h1>
+                  <p class="descriptionText">I'm a Senior at the University of Washington majoring in Computer Engineering and minoring in Digital and Experimental Arts
+                    (DXARTS) graduating in March 2019. I like to write / produce music and generally play around with audio.
+                  </p>
+                </md-content>
+              </md-grid-tile>
+              <md-grid-tile>
+                <img id="picture" src="./resources/mick.jpg" height="95%" width="95%" style="margin: auto">
+              </md-grid-tile>
+            </md-grid-list>
             <div class="" layout="row" layout-align="center center">
               <a href="./resources/Mick Marchan Resume.pdf">
                 <md-button class="md-fab" aria-label="resume">
