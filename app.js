@@ -10,9 +10,7 @@ app.controller('WindowController', ['$scope', '$sce',
     $.getJSON("resources/projects.json", function(json) {
       $scope.projects = json.projects;
       $scope.projects.forEach(function(project) {
-        if (project.hasVideo) {
-          project.videoURL = $sce.trustAsResourceUrl(project.videoURL);
-        }
+        project.videoURL = $sce.trustAsResourceUrl(project.videoURL);
       })
     });
   }

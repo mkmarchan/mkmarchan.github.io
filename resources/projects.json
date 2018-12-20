@@ -3,19 +3,16 @@
     {
       "title" : "AIRWAVE",
       "description" : "A granular synthesis controller composed of a Leap Motion sending data collected through Python to SuperCollider via OSC.",
-      "hasVideo" : true,
       "videoURL" : "https://www.youtube.com/embed/P2xhWaOES2g?rel=0"
     },
     {
       "title" : "LBHRTAM",
       "description" : "Cheap binaural ambisonic monitoring by strapping a smartphone to your head. Rotational information collected from an Android app passed to SuperCollider via OSC.",
-      "hasVideo" : true,
       "videoURL" : "https://www.youtube.com/embed/oUflGkqMN3M"
     },
     {
       "title" : "FPGA Looper",
       "description" : "A 4-channel looper with pitch shifting and distortion sound effects implemented on an FPGA.",
-      "hasVideo" : true,
       "videoURL" : "https://www.youtube.com/embed/7YYqN82q8qc"
     }
   ]
