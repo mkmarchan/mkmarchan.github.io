@@ -1,177 +1,126 @@
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Angular Material style sheet -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 
-    <!-- Angular Material requires Angular.js Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
 
-    <!-- Angular Material Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
 
-    <!-- Your application bootstrap  -->
-    <script type='text/javascript' src='./services/ng-infinite-scroll.min.js'></script>
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript" src="app.js"></script>
 
-    <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</head>
 
-  </head>
-  <body ng-app="myApp" ng-cloak ng-controller="WindowController">
-    <div id="backgroundImage"></div>
-    <md-content id="content" layout="column">
-      <header id="mainHeader"> Mick Marchan </header>
-      <div id="sticky-anchor"></div>
-      <md-tabs id="tabs" md-dynamic-height md-stretch-tabs="always" md-border-bottom layout="column">
-        <md-tab label="projects" flex layout="column">
-          <md-content class="md-padding tabContent" flex layout="column">
-            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-row-height-sm="200px" md-gutter="5%">
-              <md-grid-tile>
-                <md-content class="projectDescription" layout="column">
-                  <h2 class="md-display-2 projectHeader">AIRWAVE</h2>
-                  <p>A granular synthesis controller composed of a Leap Motion sending
-                    data collected through Python to SuperCollider via OSC.
-                  </p>
-                </md-content>
-              </md-grid-tile>
-              <md-grid-tile>
-                <iframe class="projectDemo" src="https://www.youtube.com/embed/P2xhWaOES2g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </md-grid-tile>
-            </md-grid-list>
-            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-row-height-sm="200px" md-gutter="5%">
-              <md-grid-tile>
-                <md-content class="projectDescription" layout="column">
-                  <h2 class="md-display-2 projectHeader">LBHRTAM</h2>
-                  <p>Cheap binaural ambisonic monitoring by strapping a smartphone to your head.
-                    Rotational information collected from an Android app passed to SuperCollider via OSC. </p>
-                </md-content>
-              </md-grid-tile>
-              <md-grid-tile>
-                <iframe class="projectDemo" src="https://www.youtube.com/embed/oUflGkqMN3M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </md-grid-tile>
-            </md-grid-list>
-            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1"  md-row-height="16:9" md-row-height-sm="200px" md-gutter="5%">
-              <md-grid-tile>
-                <md-content class="projectDescription" layout="column">
-                  <h2 class="md-display-2 projectHeader">Looper</h2>
-                  <p>A 4-channel looper with pitch shifting and distortion sound effects implemented on an FPGA.</p>
-                </md-content>
-              </md-grid-tile>
-              <md-grid-tile>
-                <iframe class="projectDemo" src="https://www.youtube.com/embed/7YYqN82q8qc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-              </md-grid-tile>
-            </md-grid-list>
-          </md-content>
-        </md-tab>
-        <md-tab label="Music" flex layout="column">
-          <md-content class="md-padding tabContent" flex layout="column" ng-controller="MusicController as music">
-            <md-card>
-              <md-card-header class="md-image-no-fill md-uer-avatar">
-                <md-card-avatar>
-                  <img class="md-user-avatar" ng-src="{{getArtURL(me.avatar_url)}}">
-                </md-card-avatar>
-                <md-card-header-text>
-                  <span class="md-headline">{{me.username}}</span>
-                  <span class="md-subhead">{{me.followers_count | number}} followers</span>
-                </md-card-header-text>
-              </md-card-header>
-              <md-card-content>
-                <p class="descriptionText">
-                  Since 2014, I've produced music under the pseudonym <i>theta</i>. I mostly publish trash, but plan to complete a full length album in 2019.
+<body ng-app="myApp" ng-cloak ng-controller="WindowController">
+  <div id="backgroundImage"></div>
+  <md-content id="content" layout="column">
+    <header id="mainHeader"> Mick Marchan </header>
+    <div id="sticky-anchor"></div>
+    <md-tabs id="tabs" md-dynamic-height md-stretch-tabs="always" md-border-bottom layout="column">
+      <md-tab label="projects" flex layout="column">
+        <md-content class="md-padding tabContent" flex layout="column">
+          <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-row-height-sm="200px" md-gutter="5%" ng-repeat="project in projects">
+            <md-grid-tile>
+              <md-content class="projectDescription" layout="column">
+                <h2 class="md-display-2 projectHeader">{{project.title}}</h2>
+                <p>{{project.description}}</p>
+              </md-content>
+            </md-grid-tile>
+            <md-grid-tile>
+              <iframe class="projectDemo" ng-src="{{project.videoURL}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </md-grid-tile>
+          </md-grid-list>
+          <!-- <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-row-height-sm="200px" md-gutter="5%">
+            <md-grid-tile>
+              <md-content class="projectDescription" layout="column">
+                <h2 class="md-display-2 projectHeader">AIRWAVE</h2>
+                <p>A granular synthesis controller composed of a Leap Motion sending
+                  data collected through Python to SuperCollider via OSC.
                 </p>
-              </md-card-content>
-              <md-card-actions layout="row" layout-align="start center">
-                <md-button href="{{me.permalink_url}}">Navigate to SoundCloud</md-button>
-              </md-card-actions>
-            </md-card>
-            <h1 class="md-display-1 subheader">Tracks</h1>
-            <div infinite-scroll="loadMoreTracks()" infinite-scroll-distance="2" infinite-scroll-disabled="myTracks == null">
-              <div ng-repeat="track in tracks">
-                <md-card ng-attr-id="{{'track' + track.id}}">
-                  <md-card-header layout="row">
-                    <md-card-avatar ng-if="track.artwork_url != null">
-                      <img class="md-user-avatar" ng-src="{{getArtURL(track.artwork_url)}}" ng-click="artClick(track.id)">
-                    </md-card-avatar>
-                    <md-card-header-text flex>
-                      <span class="md-headline">
-                        <div class="trackHead" style="width:100%">
-                          {{track.title}}
-                        </div>
-                      </span>
-                      <span class="md-subhead">{{track.created_at.substring(0,10) | slashhyph | date : longDate}}</span>
-                    </md-card-header-text>
-                  </md-card-header>
-                  <md-card-content ng-if="track.description.length != 0">
-                    <img ng-if="viewingArt(track.id)" class="trackArt" ng-src="{{getArtURL(track.artwork_url)}}">
-                    <p class="trackText" ng-bind-html="track.description | parseUrlFilter | nl2br"></p>
-                  </md-card-content>
-                  <md-card-actions layout="row" layout-align="start center">
-                    <md-button ng-if="!isPlaying(track.id)" ng-click="play(track.id)"><i class="material-icons">play_arrow</i></md-button>
-                    <iframe ng-if="isPlaying(track.id)" width="100%" height="166" scrolling="no" frameborder="no" ng-src="{{getWidgetURL(track.id)}}"></iframe>
-                    <!-- CUSTOM PLAY BUTTON AND WHAT NOT WILL BE DEVELOPED LATER, PROVING TO BE DIFFICULT
-                    <md-button ng-hide="isPlaying(track.id)" ng-click="play(track.id)"><i class="material-icons">play_arrow</i></md-button>
-                    <md-button ng-show="isPlaying(track.id)" ng-click="pause(track.id)"><i class="material-icons">pause</i></md-button>
-                    <md-progress-linear ng-attr-id="{{'trackProgress' + track.id}}" md-mode="query" ng-show="isPlaying(track.id)" ng-value="progress"></md-progress-linear>-->
-                  </md-card-actions>
-                </md-card>
-              </div>
-            </div>
-          </md-content>
-        </md-tab>
-        <md-tab label="About Me" flex layout="column" >
-          <md-content class="md-padding tabContent" flex layout="column">
-            <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-row-height="1:1" md-gutter="5%">
-              <md-grid-tile>
-                <md-content layout="column">
-                  <h1 class="md-display-2">Background</h1>
-                  <p class="descriptionText">I'm a Senior at the University of Washington majoring in Computer Engineering and minoring in Digital and Experimental Arts
-                    (DXARTS) graduating in March 2019. I like to write / produce music and generally play around with audio.
-                  </p>
-                </md-content>
-              </md-grid-tile>
-              <md-grid-tile>
-                <img id="picture" src="./resources/mick.jpg" height="95%" width="95%" style="margin: auto">
-              </md-grid-tile>
-            </md-grid-list>
-            <div class="" layout="row" layout-align="center center">
-              <a href="./resources/Mick Marchan Resume.pdf">
-                <md-button class="md-fab" aria-label="resume">
-                  <md-tooltip md-direction="top">
-                    Resume
-                  </md-tooltip>
-                  <img src="./resources/description.png" height="24" width="auto">
-                </md-button>
-              </a>
-              <a href="https://www.linkedin.com/in/mick-marchan-034353a0">
+              </md-content>
+            </md-grid-tile>
+            <md-grid-tile>
+              <iframe class="projectDemo" src="https://www.youtube.com/embed/P2xhWaOES2g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </md-grid-tile>
+          </md-grid-list>
+          <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-row-height-sm="200px" md-gutter="5%">
+            <md-grid-tile>
+              <md-content class="projectDescription" layout="column">
+                <h2 class="md-display-2 projectHeader">LBHRTAM</h2>
+                <p>Cheap binaural ambisonic monitoring by strapping a smartphone to your head.
+                  Rotational information collected from an Android app passed to SuperCollider via OSC. </p>
+              </md-content>
+            </md-grid-tile>
+            <md-grid-tile>
+              <iframe class="projectDemo" src="https://www.youtube.com/embed/oUflGkqMN3M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </md-grid-tile>
+          </md-grid-list>
+          <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-row-height-sm="200px" md-gutter="5%">
+            <md-grid-tile>
+              <md-content class="projectDescription" layout="column">
+                <h2 class="md-display-2 projectHeader">Looper</h2>
+                <p>A 4-channel looper with pitch shifting and distortion sound effects implemented on an FPGA.</p>
+              </md-content>
+            </md-grid-tile>
+            <md-grid-tile>
+              <iframe class="projectDemo" src="https://www.youtube.com/embed/7YYqN82q8qc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </md-grid-tile>
+          </md-grid-list> -->
+        </md-content>
+      </md-tab>
+      <md-tab label="About Me" flex layout="column">
+        <md-content class="md-padding tabContent" flex layout="column">
+          <md-grid-list class="project" md-cols="2" md-cols-xs="1" md-row-height="1:1" md-gutter="5%">
+            <md-grid-tile>
+              <md-content layout="column">
+                <h1 class="md-display-2">Background</h1>
+                <p class="descriptionText">I'm a Senior at the University of Washington majoring in Computer Engineering and minoring in Digital and Experimental Arts
+                  (DXARTS) graduating in March 2019. I like to write / produce music and generally play around with audio.
+                </p>
+              </md-content>
+            </md-grid-tile>
+            <md-grid-tile>
+              <img id="picture" src="./resources/mick.jpg" height="95%" width="95%" style="margin: auto">
+            </md-grid-tile>
+          </md-grid-list>
+          <div class="" layout="row" layout-align="center center">
+            <a href="./resources/Mick Marchan Resume.pdf">
+              <md-button class="md-fab" aria-label="resume">
                 <md-tooltip md-direction="top">
-                  LinkedIn
+                  Resume
                 </md-tooltip>
-                <md-button class="md-fab" aria-label="linkedin"><img src="./resources/in.png" height="24" width="auto"></md-button>
-              </a>
-              <a href="https://soundcloud.com/mickmarchan">
-                <md-tooltip md-direction="top">
-                  SoundCloud
-                </md-tooltip>
-                <md-button class="md-fab" aria-label="soundcloud"><img src="./resources/sc.png" height="36" width="auto"></md-button>
-              </a>
-            </div>
-          </md-content>
-        </md-tab>
-      </md-tabs>
-    </md-content>
-  </body>
-</html>
+                <img src="./resources/description.png" height="24" width="auto">
+              </md-button>
+            </a>
+            <a href="https://www.linkedin.com/in/mick-marchan-034353a0">
+              <md-tooltip md-direction="top">
+                LinkedIn
+              </md-tooltip>
+              <md-button class="md-fab" aria-label="linkedin"><img src="./resources/in.png" height="24" width="auto"></md-button>
+            </a>
+            <a href="https://soundcloud.com/mickmarchan">
+              <md-tooltip md-direction="top">
+                SoundCloud
+              </md-tooltip>
+              <md-button class="md-fab" aria-label="soundcloud"><img src="./resources/sc.png" height="36" width="auto"></md-button>
+            </a>
+          </div>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</body>
 
-<!--
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
--->
+</html>
