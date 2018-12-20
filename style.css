@@ -2,158 +2,85 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  overflow-y: scroll;
 }
 
-/* TODO: while track is playing, put art as background image that is blurred */
-#backgroundImage {
-  z-index:0;
-  position:fixed;
-  margin: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: #ECEFF1;
-  /*background-image: url('https://i1.sndcdn.com/artworks-000082482785-uyihnm-t500x500.jpg');*/
-  background-size: 100%;
-}
-
+/* CONTENT */
 #content {
   min-height:100%;
   margin: 0 auto;
 }
 
-#tabs {
+/* HEADER */
+#mainHeader {
+  font-weight:300;
+  text-align: center;
 }
-
-.buttonFooter {
-  border-top: 1px solid #E0E0E0;
-  padding-top: 20px;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-}
-
-.stick {
-  background-color: white;
-  width:100%;
-  z-index:500;
-  position: fixed;
-  top: 0;
-  border-right: 1px solid #E0E0E0 !important;
-}
-
-/* @media only screen and (min-width: 1000px) {
-  .stick {
-    width:998px;
-  }
-} */
 
 @media only screen and (min-width: 500px) {
-  #content {
-    border-left: 1px solid #E0E0E0;
-    border-right: 1px solid #E0E0E0;
-    border-bottom: 1px solid #E0E0E0;
-  }
 
-  header {
+  #mainHeader {
     font-size: 10vw;
   }
 }
 
 @media only screen and (min-width: 1250px) {
-  header {
+  #mainHeader {
     font-size: 125px;
   }
 }
 
 @media only screen and (max-width: 500px) {
-  header {
+  #mainHeader {
     padding: 10px;
     font-size: 50px;
   }
 }
 
-header {
-  font-weight:300;
-  text-align: center;
+
+/* PROJECTS */
+
+.projectDemo {
+  height: 95%;
+  width: 95%;
 }
 
-.subheader {
-  text-align: center;
+@media only screen and (min-width: 960px) {
+  .projects {
+    width: auto;
+  }
+  .projectDescription {
+    position: relative;
+  }
 }
 
-.descriptionText {
-  text-indent: 1em;
+
+@media only screen and (max-width: 959px) {
+  .projects {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+  .projectHeader {
+    text-align: center;
+  }
+  .projectDescription {
+    position: absolute;
+    width:100%;
+  }
 }
 
-md-card-title-text {
-  padding-left: 20px;
-}
-
-.trackHead {
-  width:100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-}
-
-.trackHead > a {
-  text-decoration:none !important;
-}
-
-.trackArt {
-  display: block;
-  margin: 0 auto;
-  height: auto;
-  width: 75%;
-}
-
-.trackText {
-  word-break: break-all;
-}
-
-.tabContent {
-  padding-left: 32px;
-  padding-right: 32px;
-}
-
-#picture {
-  max-width: 922px;
-}
+/* @media only screen and (max-width: 600px) {
+  .projects {
+    width: auto;
+  }
+  .projectHeader {
+    text-align: center;
+  }
+} */
 
 .projectHeader {
   margin:0 !important;
 }
 
 .projectDescription {
-  width:100%
-}
-
-.project {
-  margin-bottom: 32px;
-}
-
-
-@media only screen and (min-width: 960px) {
-  .projectDemo {
-    height: 95%;
-    width: 95%;
-  }
-}
-
-
-@media only screen and (max-width: 960px) {
-  .projectDemo {
-    height: 200px;
-    width: 355px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .projectDemo {
-    height: 95%;
-    width: 95%;
-  }
+  bottom: 0;
 }
