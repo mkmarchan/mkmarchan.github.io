@@ -33,22 +33,44 @@
     <md-tabs md-stretch-tabs="always" md-border-bottom flex>
       <md-tab label="projects">
         <md-content class="md-padding">
-          <div class="projects">
-            <md-grid-list md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-gutter="5%" ng-repeat="project in projects">
-              <md-grid-tile>
+          <div class="tabContent">
+            <!-- TODO consider changing this to a regular list -->
+            <md-grid-list md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-gutter="5%">
+              <md-grid-tile ng-repeat-start="project in projects">
                 <div class="projectDescription" layout="column">
                   <h2 class="md-display-2 projectHeader">{{project.title}}</h2>
                   <p>{{project.description}}</p>
                 </div>
               </md-grid-tile>
-              <md-grid-tile>
+              <md-grid-tile ng-repeat-end>
                 <iframe class="projectDemo" ng-src="{{project.videoURL}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
               </md-grid-tile>
             </md-grid-list>
           </div>
         </md-content>
       </md-tab>
+      <!-- TODO factor buttons into json. Factor description text into JSON -->
       <md-tab label="About Me">
+        <md-content class="md-padding">
+          <div class="tabContent">
+            <ul class="contentList">
+              <li class="textContentItem">
+                <h1 class="md-display-2">Background</h1>
+                <p class="descriptionText">I'm a Senior at the University of Washington majoring in Computer Engineering and minoring in Digital and Experimental Arts
+                  (DXARTS) graduating in March 2019. I like to write / produce music and generally play around with audio.
+                </p>
+                <div layout="row" layout-align="center center">
+                  <md-button class="md-raised" aria-label="Resume" href="./resources/Mick Marchan Resume.pdf" target="_blank">Resume</md-button>
+                  <md-button class="md-raised" aria-label="LinkedIn" href="https://www.linkedin.com/in/mick-marchan-034353a0" target="_blank">LinkedIn</md-button>
+                  <md-button class="md-raised" aria-label="SoundCloud" href="https://soundcloud.com/mickmarchan" target="_blank">SoundCloud</md-button>
+                </div>
+              </li>
+              <li id="profilePictureContainer">
+                <img id="profilePicture" src="./resources/mick.jpg" onload="resizeProfilePicture">
+              </li>
+            </ul>
+          </div>
+        </md-content>
       </md-tab>
     </md-tabs>
   </div>
