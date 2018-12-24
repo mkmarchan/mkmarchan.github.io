@@ -35,7 +35,7 @@
         <md-content class="md-padding">
           <div class="tabContent">
             <!-- TODO consider changing this to a regular list -->
-            <md-grid-list md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-gutter="5%">
+            <!-- <md-grid-list md-cols="2" md-cols-xs="1" md-cols-sm="1" md-row-height="16:9" md-gutter="5%">
               <md-grid-tile ng-repeat-start="project in projects">
                 <div class="projectDescription" layout="column">
                   <h2 class="md-display-2 projectHeader">{{project.title}}</h2>
@@ -45,7 +45,20 @@
               <md-grid-tile ng-repeat-end>
                 <iframe class="projectDemo" ng-src="{{project.videoURL}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
               </md-grid-tile>
-            </md-grid-list>
+            </md-grid-list> -->
+            <ul class="contentList" ng-repeat="project in projects">
+              <li>
+                <div class="projectDescription" layout="column">
+                  <h2 class="md-display-2 projectHeader">{{project.title}}</h2>
+                  <p>{{project.description}}</p>
+                </div>
+              </li>
+              <li>
+                <div class="videoWrapper">
+                  <iframe ng-src="{{project.videoURL}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+              </li>
+            </ul>
           </div>
         </md-content>
       </md-tab>
@@ -54,8 +67,8 @@
         <md-content class="md-padding">
           <div class="tabContent">
             <ul class="contentList">
-              <li class="textContentItem">
-                <h1 class="md-display-2">Background</h1>
+              <li class="textContentItem" style="overflow: hidden">
+                <h1 class="md-display-2 projectHeader">Background</h1>
                 <p class="descriptionText">I'm a Senior at the University of Washington majoring in Computer Engineering and minoring in Digital and Experimental Arts
                   (DXARTS) graduating in March 2019. I like to write / produce music and generally play around with audio.
                 </p>

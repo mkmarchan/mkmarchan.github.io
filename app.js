@@ -17,20 +17,26 @@ app.controller('WindowController', ['$scope', '$sce',
 ]);
 
 // Profile picture resizing. Assumes it is square and at least 922 pixels wide.
-// super hacky
-// TODO initial size is off for some reason
+// super jank
 var firstResize = true;
 var interval = window.setInterval(resizeProfilePicture, 1);
+
 function resizeProfilePicture() {
   var picture = document.getElementById("profilePicture");
   var pictureRect = picture.getBoundingClientRect();
-  var defaultLength = Math.min(922, picture.parentElement.parentElement.scrollWidth * 0.95);
+  var parent = picture.parentElement.parentElement;
+  var parentRect = parent.getBoundingClientRect();
+  var defaultLength = Math.min(922, parent.scrollWidth * 0.95);
+
+  var overflowSide = Math.min(document.body.scrollHeight - parentRect.y,
+    document.body.scrollWidth - parentRect.width / 2);
+
   if (firstResize && defaultLength != 0) {
     firstResize = false;
     window.clearInterval(interval);
   }
 
-  var diff = document.body.scrollHeight - (pictureRect.y + defaultLength + 32);
+  var diff = overflowSide - (defaultLength + 32);
   if (diff < 0 && document.body.scrollWidth >= 960) {
     picture.style.width = picture.style.height = defaultLength + diff + "px";
   } else {
