@@ -2,125 +2,94 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  overflow-y: scroll;
 }
 
-/* TODO: while track is playing, put art as background image that is blurred */
-#backgroundImage {
-  z-index:0;
-  position:fixed;
-  margin: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: #ECEFF1;
-  /*background-image: url('https://i1.sndcdn.com/artworks-000082482785-uyihnm-t500x500.jpg');*/
-  background-size: 100%;
-}
-
+/* CONTENT */
 #content {
   min-height:100%;
   margin: 0 auto;
 }
 
-#tabs {
+/* HEADER */
+#mainHeader {
+  text-align: center;
 }
-
-.buttonFooter {
-  border-top: 1px solid #E0E0E0;
-  padding-top: 20px;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-}
-
-.stick {
-  background-color: white;
-  width:100%;
-  z-index:500;
-  position: fixed;
-  top: 0;
-  border-right: 1px solid #E0E0E0 !important;
-}
-
-/* @media only screen and (min-width: 1000px) {
-  .stick {
-    width:998px;
-  }
-} */
 
 @media only screen and (min-width: 500px) {
-  #content {
-    border-left: 1px solid #E0E0E0;
-    border-right: 1px solid #E0E0E0;
-    border-bottom: 1px solid #E0E0E0;
-  }
 
-  header {
+  #mainHeader {
     font-size: 10vw;
   }
 }
 
 @media only screen and (min-width: 1250px) {
-  header {
+  #mainHeader {
     font-size: 125px;
   }
 }
 
 @media only screen and (max-width: 500px) {
-  header {
+  #mainHeader {
     padding: 10px;
     font-size: 50px;
   }
 }
 
-header {
-  font-weight:300;
-  text-align: center;
+/* PROJECTS */
+
+.videoWrapper {
+	position: relative;
+  overflow-x: hidden;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
 }
 
-.subheader {
-  text-align: center;
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
-.descriptionText {
-  text-indent: 1em;
+.projectDemo {
+  height: 95%;
+  width: 95%;
 }
 
-md-card-title-text {
-  padding-left: 20px;
+.contentList {
+  list-style-type: none;
+  padding-left: 0;
 }
 
-.trackHead {
-  width:100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
+@media only screen and (min-width: 960px) {
+  .tabContent {
+    width: auto;
+  }
+  .projectDescription {
+    position: relative;
+  }
+  .contentList {
+    columns: 2;
+  }
 }
 
-.trackHead > a {
-  text-decoration:none !important;
-}
 
-.trackArt {
-  display: block;
-  margin: 0 auto;
-  height: auto;
-  width: 75%;
-}
-
-.trackText {
-  word-break: break-all;
-}
-
-.tabContent {
-  padding-left: 32px;
-  padding-right: 32px;
-}
-
-#picture {
-  max-width: 922px;
+@media only screen and (max-width: 959px) {
+  .tabContent {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+  .projectHeader {
+    text-align: center;
+  }
+  .projectDescription {
+    width:100%;
+  }
+  .contentList {
+    columns: 1;
+  }
 }
 
 .projectHeader {
@@ -128,32 +97,19 @@ md-card-title-text {
 }
 
 .projectDescription {
-  width:100%
+  bottom: 0;
 }
 
-.project {
-  margin-bottom: 32px;
-}
-
-
-@media only screen and (min-width: 960px) {
-  .projectDemo {
-    height: 95%;
-    width: 95%;
-  }
+.textContentItem {
+  padding-bottom: 16px;
 }
 
 
-@media only screen and (max-width: 960px) {
-  .projectDemo {
-    height: 200px;
-    width: 355px;
-  }
+/* ABOUT ME */
+#profilePictureContainer {
+  text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
-  .projectDemo {
-    height: 95%;
-    width: 95%;
-  }
+#profilePicture {
+  margin: auto;
 }
