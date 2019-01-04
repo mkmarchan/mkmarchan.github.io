@@ -1,0 +1,18 @@
+{
+  "profilePictureURL" : "./resources/mick.jpg",
+  "background" : "I'm a Senior at the University of Washington majoring in Computer Engineering and minoring in Digital and Experimental Arts (DXARTS) graduating in March 2019. I like to write / produce music and generally play around with audio.",
+  "buttonList" : [
+    {
+      "label" : "Resume",
+      "link" : "./resources/Mick Marchan Resume.pdf"
+    },
+    {
+      "label" : "LinkedIn",
+      "link" : "https://www.linkedin.com/in/mick-marchan-034353a0"
+    },
+    {
+      "label" : "SoundCloud",
+      "link" : "https://soundcloud.com/mickmarchan"
+    }
+  ]
+}
