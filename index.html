@@ -50,23 +50,19 @@
           </div>
         </md-content>
       </md-tab>
-      <!-- TODO factor buttons into json. LOOK AT about.json -->
       <md-tab label="About Me">
         <md-content class="md-padding">
           <div class="tabContent">
             <ul class="contentList">
               <li class="textContentItem" style="overflow: hidden">
                 <h1 class="md-display-2 projectHeader">Background</h1>
-                <p class="descriptionText"></p>
+                <p class="descriptionText">{{about.background}}</p>
                 <div layout="row" layout-align="center center">
-                  <!-- TODO ng-repeat item in buttonList -->
-                  <md-button class="md-raised" aria-label="Resume" href="./resources/Mick Marchan Resume.pdf" target="_blank">Resume</md-button>
-                  <md-button class="md-raised" aria-label="LinkedIn" href="https://www.linkedin.com/in/mick-marchan-034353a0" target="_blank">LinkedIn</md-button>
-                  <md-button class="md-raised" aria-label="SoundCloud" href="https://soundcloud.com/mickmarchan" target="_blank">SoundCloud</md-button>
+                  <md-button class="md-raised" aria-label="{{button.label}}" ng-href="{{button.link}}" target="_blank" ng-repeat="button in about.buttonList">{{button.label}}</md-button>
                 </div>
               </li>
               <li id="profilePictureContainer">
-                <img id="profilePicture" src="./resources/mick.jpg" onload="resizeProfilePicture">
+                <img id="profilePicture" ng-src="{{about.profilePictureURL}}" onload="resizeProfilePicture">
               </li>
             </ul>
           </div>
