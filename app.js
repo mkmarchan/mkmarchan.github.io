@@ -5,6 +5,7 @@ var app = angular.module('myApp', ['ngMaterial'])
       .accentPalette('grey')
   });
 
+// Load in information from JSONs to display onto the page
 app.controller('WindowController', ['$scope', '$sce',
   function($scope, $sce) {
     $.getJSON("resources/projects.json", function(json) {
@@ -12,6 +13,10 @@ app.controller('WindowController', ['$scope', '$sce',
       $scope.projects.forEach(function(project) {
         project.videoURL = $sce.trustAsResourceUrl(project.videoURL);
       })
+    });
+
+    $.getJSON("resources/about.json", function(json) {
+      $scope.about = json;
     });
   }
 ]);

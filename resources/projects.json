@@ -1,6 +1,11 @@
 {
   "projects" : [
     {
+      "title" : "INHALE / EXHALE",
+      "description" : "An ambisonic solo vocal performance with electronics. Developed in Python and SuperCollider.",
+      "videoURL" : "https://www.youtube.com/embed/RFe_CFtQOOA"
+    },
+    {
       "title" : "AIRWAVE",
       "description" : "A granular synthesis controller composed of a Leap Motion sending data collected through Python to SuperCollider via OSC.",
       "videoURL" : "https://www.youtube.com/embed/P2xhWaOES2g?rel=0"
