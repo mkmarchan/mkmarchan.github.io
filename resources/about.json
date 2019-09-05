@@ -1,11 +1,7 @@
 {
   "profilePictureURL" : "./resources/mick.jpg",
-  "background" : "I'm a Senior at the University of Washington majoring in Computer Engineering and minoring in Digital and Experimental Arts (DXARTS) graduating in March 2019. I like to write / produce music and generally play around with audio.",
+  "background" : "I am a software engineer working in Mixed / Augmented Reality at Microsoft and a recent graduate from the University of Washington where I majored in Computer Engineering and minored in Digital and Experimental Arts.",
   "buttonList" : [
-    {
-      "label" : "Resume",
-      "link" : "./resources/Mick Marchan Resume.pdf"
-    },
     {
       "label" : "LinkedIn",
       "link" : "https://www.linkedin.com/in/mick-marchan-034353a0"
