@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Particle Collider (sound design)"
-thumbnail: "/resources/particle-collider.avif"
+thumbnail: "/resources/particle-collider.jpg"
 ---
 <div class="video-wrapper">
     <iframe title="vimeo-player" src="https://player.vimeo.com/video/371007316?h=4fa4862fb7&byline=0&portrait=0" frameborder="0"    allowfullscreen></iframe>

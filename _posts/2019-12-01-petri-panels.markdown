@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Petri-Panels (sound design)"
-thumbnail: "/resources/petri-panels.avif"
+thumbnail: "/resources/petri-panels.jpg"
 ---
 <div class="video-wrapper">
     <iframe title="vimeo-player" src="https://player.vimeo.com/video/377708593?h=e64e8fa9b4&byline=0&portrait=0" frameborder="0"    allowfullscreen></iframe>

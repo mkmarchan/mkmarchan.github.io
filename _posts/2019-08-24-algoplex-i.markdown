@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ALGOPLEX I (sound design)"
-thumbnail: "/resources/algoplex-i.avif"
+thumbnail: "/resources/algoplex-i.jpg"
 ---
 <div class="video-wrapper">
     <iframe title="vimeo-player" src="https://player.vimeo.com/video/378214583?h=088ab67522?title=0&byline=0&portrait=0" frameborder="0" allowfullscreen></iframe>
