@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "AIRWAVE"
+thumbnail: "https://img.youtube.com/vi/P2xhWaOES2g/maxresdefault.jpg"
+---
+<div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/P2xhWaOES2g?si=9a6kmsp-jRf4o5_Z&amp;controls=0;showinfo=0;autohide=1;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<br>
+Leap Motion controlled granular synth

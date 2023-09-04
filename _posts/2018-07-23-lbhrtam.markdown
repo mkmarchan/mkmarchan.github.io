@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "LBHRTAM"
+thumbnail: "https://img.youtube.com/vi/oUflGkqMN3M/maxresdefault.jpg"
+---
+<div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/oUflGkqMN3M?si=Me2DbvZkMT4kxtnf&amp;controls=0;showinfo=0;autohide=1;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<br>
+Cheap binaural ambisonic monitoring by strapping a smartphone to your head. Rotational information collected from an Android app passed to SuperCollider via OSC.

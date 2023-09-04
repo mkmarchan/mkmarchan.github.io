@@ -18,11 +18,6 @@
   line-height: $base-line-height * $base-font-size * 2.25;
   margin-bottom: 0;
   text-transform: uppercase;
-
-  &,
-  &:visited {
-    color: $grey-color-dark;
-  }
 }
 
 .site-nav {
@@ -36,7 +31,6 @@
   }
 
   .page-link {
-    color: $text-color;
     line-height: $base-line-height;
 
     // Gaps between nav items, but not on the last one
@@ -150,8 +144,9 @@
 }
 
 .post-link {
+  color: $grey-color-dark;
   display: block;
-  @include relative-font-size(1.5);
+  @include relative-font-size(1);
 }
 
 
@@ -219,28 +214,4 @@
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-.video-overlay {
-  width: 100%;
-  height: 100%;
-  top:0;
-  left:0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.video-overlay img {
-  position: absolute;
-  height:inherit;
-  width:auto;
-  max-width:none;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  cursor:pointer;
-  transition: 0.3s;
-}
-
-.video-overlay:hover img {
-  opacity:0;
 }
