@@ -3,7 +3,9 @@ layout: page
 title: CV
 permalink: /cv/
 ---
-**MICK MARCHAN** \
+**MICK MARCHAN**
+
+mkmarchan.github.io\
 mick.marchan@gmail.com
 
 Born 1997, Mililani, HI \
