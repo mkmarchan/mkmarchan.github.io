@@ -4,15 +4,10 @@ title: Publications
 permalink: /publications/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+[Multi-Layered Architecture for Efficient and Accurate HRTF Rendering](https://www.aes.org/e-lib/browse.cfm?elib=22141) \
+Published in JAES Volume 71 Issue 6 \
+June 2023
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+[Efficient and Accurate Multi-Source HRTF Rendering via Multi-Layer Optimization](https://www.aes.org/e-lib/browse.cfm?elib=21839) \
+Presented at AES AVAR 2022 \
+August 2022
