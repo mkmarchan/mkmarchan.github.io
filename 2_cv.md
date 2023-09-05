@@ -15,19 +15,19 @@ Currently based in Seattle, WA
 <table>
     <tr>
         <td>2023</td>
-        <td><i>SuperCluster (sound design)</i>, Collaboration w/ Spacefiller, XO Seattle, Seattle</td>
+        <td><i>SuperCluster (sound design)</i>, Collaboration w/ SPACEFILLER, XO Seattle, Seattle</td>
     </tr>
     <tr>
         <td>2022</td>
-        <td><i>Petri-Panels (sound design)</i>, Collaboration w/ Spacefiller, SAM Remix (2019) & Museum of Museums (2022), Seattle</td>
+        <td><i>Petri-Panels (sound design)</i>, Collaboration w/ SPACEFILLER, SAM Remix (2019) & Museum of Museums (2022), Seattle</td>
     </tr>
     <tr>
         <td>2019</td>
-        <td><i>Particle Collider (sound design)</i>, Collaboration w/ Spacefiller, Glass Box Gallery, Seattle</td>
+        <td><i>Particle Collider (sound design)</i>, Collaboration w/ SPACEFILLER, Glass Box Gallery, Seattle</td>
     </tr>
     <tr>
         <td>2019</td>
-        <td><i>Algoplex I (sound design)</i>, Collaboration w/ Spacefiller, SAM Remix & Glass Box Gallery, Seattle</td>
+        <td><i>Algoplex I (sound design)</i>, Collaboration w/ SPACEFILLER, SAM Remix & Glass Box Gallery, Seattle</td>
     </tr>
 </table> 
 
@@ -35,7 +35,7 @@ Currently based in Seattle, WA
 <table>
     <tr>
         <td>2022</td>
-        <td><i>untitled performance (sound design & composition)</i>, Collaboration w/ Spacefiller, Algorithmic Art Assembly, San Francisco</td>
+        <td><i>untitled performance (sound design & composition)</i>, Collaboration w/ SPACEFILLER, Algorithmic Art Assembly, San Francisco</td>
     </tr>
     <tr>
         <td>2019</td>

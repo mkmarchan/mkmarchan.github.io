@@ -6,7 +6,8 @@ thumbnail: "/resources/particle-collider.jpg"
 <div class="video-wrapper">
     <iframe title="vimeo-player" src="https://player.vimeo.com/video/371007316?h=4fa4862fb7&byline=0&portrait=0" frameborder="0"    allowfullscreen></iframe>
 </div>
+<p class="caption">Video by <a href="http://www.christianwanderson.com/">Christian W. Anderson</a> and SPACEFILLER.</p>
 <br>
-An audiovisual collaboration with <a href="https://spacefiller.space/algoplex1/">Spacefiller</a>. Sound is synthesized in SuperCollider and modulated by the particle collider width.
+An audiovisual collaboration with <a href="https://spacefiller.space/algoplex1/">SPACEFILLER</a>. Sound is synthesized in SuperCollider and modulated by the particle collider width.
 
-This work was exhibited at Spacefiller's <a href="https://spacefiller.space/fantasy-parameter-spaces/">Fantasy Parameter Spaces</a> show at Glass Box Gallery.
+This work was exhibited at SPACEFILLER's <a href="https://spacefiller.space/fantasy-parameter-spaces/">Fantasy Parameter Spaces</a> show at Glass Box Gallery.
