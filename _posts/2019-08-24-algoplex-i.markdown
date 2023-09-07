@@ -9,4 +9,4 @@ thumbnail: "/resources/algoplex-i.jpg"
 <br>
 An audiovisual collaboration with <a href="https://spacefiller.space/algoplex1/">SPACEFILLER</a>. Sound is algorithmically synthesized in SuperCollider in response to visual events.
 
-This work was exhibited at SAM REMIX in 2019 at the Seattle Art Museum Sculpture Park and at SPACEFILLER's <a href="https://spacefiller.space/fantasy-parameter-spaces/">Fantasy Parameter Spaces</a> show at Glass Box Gallery.
+This work was exhibited at SAM Lights in 2019 at the Seattle Art Museum Sculpture Park and at SPACEFILLER's <a href="https://spacefiller.space/fantasy-parameter-spaces/">Fantasy Parameter Spaces</a> show at Glass Box Gallery.

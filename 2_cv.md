@@ -11,6 +11,10 @@ mick.marchan@gmail.com
 Born 1997, Mililani, HI \
 Currently based in Seattle, WA
 
+University of Washington \
+B.Sc. Computer Engineering \
+Minor in Digital and Experimental Arts
+
 **INSTALLATIONS**
 <table>
     <tr>
@@ -27,7 +31,7 @@ Currently based in Seattle, WA
     </tr>
     <tr>
         <td>2019</td>
-        <td><i>Algoplex I (sound design)</i>, Collaboration w/ SPACEFILLER, SAM Remix & Glass Box Gallery, Seattle</td>
+        <td><i>Algoplex I (sound design)</i>, Collaboration w/ SPACEFILLER, SAM Lights & Glass Box Gallery, Seattle</td>
     </tr>
 </table> 
 
