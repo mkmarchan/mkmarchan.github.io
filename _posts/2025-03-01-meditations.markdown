@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "meditations"
-thumbnail: "resources/meditations-temp.jpeg"
+thumbnail: "/resources/meditations-temp.jpeg"
 ---
 
 WORK IN PROGRESS
