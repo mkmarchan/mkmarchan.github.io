@@ -18,6 +18,10 @@ Minor in Digital and Experimental Arts
 **INSTALLATIONS**
 <table>
     <tr>
+        <td>2025</td>
+        <td><i>meditations</i>, Collaboration w/ Alex Nagy, SOIL, Seattle</td>
+    </tr>
+    <tr>
         <td>2023</td>
         <td><i>SuperCluster (sound design)</i>, Collaboration w/ SPACEFILLER, XO Seattle, Seattle</td>
     </tr>
