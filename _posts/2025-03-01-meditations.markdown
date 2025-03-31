@@ -4,4 +4,4 @@ title:  "meditations"
 thumbnail: "/resources/meditations-temp.jpeg"
 ---
 
-WORK IN PROGRESS
+Please check back on 4/3 for more info on upcoming installation 'meditations'
